@@ -1,0 +1,85 @@
+202115191942
+05-01-2021
+4
+151.96
+Cat1_Product 1_1_19.99_Cat1_Product 2_1_20.99_Cat1_Product 3_1_100.99_Cat1_Product 4_1_9.99
+20211693249
+06-01-2021
+8
+231.92
+Cat1_Product 1_5_19.99_Cat1_Product 2_1_20.99_Cat1_Product 3_1_100.99_Cat1_Product 4_1_9.99
+202116205039
+06-01-2021
+5
+99.95
+Cat1_Product 1_5_19.99
+202116205116
+06-01-2021
+5
+99.95
+Cat1_Product 1_5_19.99
+2021191269
+09-01-2021
+7
+35.93
+Cat1_Product 2_1_20.99_Cat2_Product 2_1_4.99_Cat2_Product 1_5_1.99
+202119173219
+09-01-2021
+10
+294.90
+Cat1_Product 1_10_29.49
+20211918343
+09-01-2021
+5
+147.45
+Cat1_Product 1_5_29.49
+202111195557
+11-01-2021
+12
+112.14
+Electronics_SanDisk Ultra 64 GB_6_12.20_Electronics_HDMI 2.0 Cable_6_6.49
+2021111154545
+11-01-2021
+70
+739.80
+Electronics_SanDisk Ultra 64 GB_50_12.20_Electronics_HDMI 2.0 Cable_20_6.49
+2021111155027
+11-01-2021
+25
+219.35
+Electronics_SanDisk Ultra 64 GB_10_12.20_Electronics_HDMI 2.0 Cable_15_6.49
+2021111191726
+11-01-2021
+2
+12.98
+Electronics_HDMI 2.0 Cable_2_6.49
+2021111193858
+11-01-2021
+2
+18.69
+Electronics_SanDisk Ultra 64 GB_1_12.20_Electronics_HDMI 2.0 Cable_1_6.49
+2021111194026
+11-01-2021
+2
+18.69
+Electronics_SanDisk Ultra 64 GB_1_12.20_Electronics_HDMI 2.0 Cable_1_6.49
+2021112212610
+12-01-2021
+43
+501.76
+Electronics_SanDisk Ultra 64 GB_39_12.20_Electronics_HDMI 2.0 Cable_4_6.49
+202111222419
+12-01-2021
+10
+122.00
+Electronics_SanDisk Ultra 64 GB_10_12.20
+2021113174959
+13-01-2021
+2
+18.69
+Electronics_SanDisk Ultra 64 GB_1_12.20_Electronics_HDMI 2.0 Cable_1_6.49
+2021113175334
+13-01-2021
+1
+6.49
+Electronics_HDMI 2.0 Cable_1_6.49
