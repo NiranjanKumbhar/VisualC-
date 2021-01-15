@@ -211,11 +211,12 @@ namespace EPOS_APPLICATION_20230733
                 {
                     CatName = FileLine
                 };
+
                 CategoryFlowLayoutPanel.Controls.Add(NewCatList[1]);
             }
-
+            
             InputFile.Close();
-
+            
             if (CategoryList.Count > 0)
             {
                 InputFile = File.OpenText(PRODUCTDATABASEFILENAME);
@@ -448,8 +449,6 @@ namespace EPOS_APPLICATION_20230733
             }
         }
 
-
-
         private void EndOfTheDayStock()
         {
             string NewFileContent="";
@@ -474,8 +473,6 @@ namespace EPOS_APPLICATION_20230733
             EndOfTheDayStock();
             this.Close();
         }
-
-        
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
@@ -712,7 +709,6 @@ namespace EPOS_APPLICATION_20230733
             MainForm_Load(sender,e);
             ChangeButtonBorder(1);
         }
-
 
         private void ChangeButtonBorder(int Index)
         {

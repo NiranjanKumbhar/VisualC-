@@ -1,0 +1,20 @@
+			Management Stock Report
+			15-01-2021
+
+			Category: Electronics
+	Product Name                  Product Quantity
+	SanDisk Ultra 64 GB           6         
+	HDMI 2.0 Cable                3         
+
+			Category: Mobiles
+	Product Name                  Product Quantity
+
+			Category: Computers
+	Product Name                  Product Quantity
+
+			Category: Home
+	Product Name                  Product Quantity
+
+			Category: Pet
+	Product Name                  Product Quantity
+

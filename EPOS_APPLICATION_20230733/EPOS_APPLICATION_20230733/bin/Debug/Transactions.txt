@@ -83,3 +83,28 @@ Electronics_SanDisk Ultra 64 GB_1_12.20_Electronics_HDMI 2.0 Cable_1_6.49
 1
 6.49
 Electronics_HDMI 2.0 Cable_1_6.49
+202111515014
+15-01-2021
+2
+12.98
+Electronics_HDMI 2.0 Cable_2_6.49
+202111515559
+15-01-2021
+1
+12.20
+Electronics_SanDisk Ultra 64 GB_1_12.20
+202111515656
+15-01-2021
+2
+24.40
+Electronics_SanDisk Ultra 64 GB_2_12.20
+202111515823
+15-01-2021
+2
+24.40
+Electronics_SanDisk Ultra 64 GB_2_12.20
+202111521149
+15-01-2021
+4
+37.38
+Electronics_SanDisk Ultra 64 GB_2_12.20_Electronics_HDMI 2.0 Cable_2_6.49

@@ -11,11 +11,6 @@ namespace EPOS_APPLICATION_20230733
             InitializeComponent();
         }
 
-        private void CartList_Load(object sender, EventArgs e)
-        {
-
-        }
-
         #region Properties
 
         private string _ProductName;

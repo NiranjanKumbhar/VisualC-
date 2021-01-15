@@ -30,9 +30,9 @@ namespace EPOS_APPLICATION_20230733
         private void InitializeComponent()
         {
             this.ProductListPanel = new System.Windows.Forms.Panel();
+            this.AddToCartButton = new System.Windows.Forms.Button();
             this.ProductPriceLabel = new System.Windows.Forms.Label();
             this.ProductNameLabel = new System.Windows.Forms.Label();
-            this.AddToCartButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ProductListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,26 +48,6 @@ namespace EPOS_APPLICATION_20230733
             this.ProductListPanel.Name = "ProductListPanel";
             this.ProductListPanel.Size = new System.Drawing.Size(138, 168);
             this.ProductListPanel.TabIndex = 0;
-            // 
-            // ProductPriceLabel
-            // 
-            this.ProductPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductPriceLabel.Location = new System.Drawing.Point(3, 108);
-            this.ProductPriceLabel.Name = "ProductPriceLabel";
-            this.ProductPriceLabel.Size = new System.Drawing.Size(131, 23);
-            this.ProductPriceLabel.TabIndex = 2;
-            this.ProductPriceLabel.Text = "label2";
-            this.ProductPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ProductNameLabel
-            // 
-            this.ProductNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductNameLabel.Location = new System.Drawing.Point(-1, 0);
-            this.ProductNameLabel.Name = "ProductNameLabel";
-            this.ProductNameLabel.Size = new System.Drawing.Size(135, 32);
-            this.ProductNameLabel.TabIndex = 1;
-            this.ProductNameLabel.Text = "label1";
-            this.ProductNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AddToCartButton
             // 
@@ -86,11 +66,33 @@ namespace EPOS_APPLICATION_20230733
             this.AddToCartButton.UseVisualStyleBackColor = true;
             this.AddToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
             // 
+            // ProductPriceLabel
+            // 
+            this.ProductPriceLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceLabel.Location = new System.Drawing.Point(3, 108);
+            this.ProductPriceLabel.Name = "ProductPriceLabel";
+            this.ProductPriceLabel.Size = new System.Drawing.Size(131, 23);
+            this.ProductPriceLabel.TabIndex = 2;
+            this.ProductPriceLabel.Text = "label2";
+            this.ProductPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProductNameLabel
+            // 
+            this.ProductNameLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductNameLabel.Location = new System.Drawing.Point(-1, 0);
+            this.ProductNameLabel.Name = "ProductNameLabel";
+            this.ProductNameLabel.Size = new System.Drawing.Size(135, 32);
+            this.ProductNameLabel.TabIndex = 1;
+            this.ProductNameLabel.Text = "label1";
+            this.ProductNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(19, 38);
+            this.pictureBox1.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Item;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -101,7 +103,6 @@ namespace EPOS_APPLICATION_20230733
             this.Controls.Add(this.ProductListPanel);
             this.Name = "ProductList";
             this.Size = new System.Drawing.Size(144, 171);
-            this.Load += new System.EventHandler(this.ProductList_Load);
             this.ProductListPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

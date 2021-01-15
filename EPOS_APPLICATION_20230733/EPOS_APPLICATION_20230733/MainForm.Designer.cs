@@ -39,6 +39,10 @@ namespace EPOS_APPLICATION_20230733
             this.ProductQuantityTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ProductManagementPanel = new System.Windows.Forms.Panel();
+            this.ModifyButton = new System.Windows.Forms.Button();
+            this.ComboBoxPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ProductComboBox = new System.Windows.Forms.ComboBox();
             this.ProductCategoryPanel = new System.Windows.Forms.Panel();
             this.CategoryManagementPanel = new System.Windows.Forms.Panel();
             this.AddCatGroupBox = new System.Windows.Forms.GroupBox();
@@ -66,9 +70,12 @@ namespace EPOS_APPLICATION_20230733
             this.label16 = new System.Windows.Forms.Label();
             this.TransactionIDLabel = new System.Windows.Forms.Label();
             this.InventoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.ModifyProductRadioButton = new System.Windows.Forms.RadioButton();
             this.AddProductRadioButton = new System.Windows.Forms.RadioButton();
             this.AddCategoryRadioButton = new System.Windows.Forms.RadioButton();
             this.SearchPanel = new System.Windows.Forms.Panel();
+            this.IDGroupBox = new System.Windows.Forms.GroupBox();
+            this.FoundIDListBox = new System.Windows.Forms.ListBox();
             this.ItemFoundPanel = new System.Windows.Forms.Panel();
             this.TotalFoundLabel = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -80,8 +87,6 @@ namespace EPOS_APPLICATION_20230733
             this.TranIDSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.TransactionIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.IDGroupBox = new System.Windows.Forms.GroupBox();
-            this.FoundIDListBox = new System.Windows.Forms.ListBox();
             this.FindButton = new System.Windows.Forms.Button();
             this.DateSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -95,12 +100,8 @@ namespace EPOS_APPLICATION_20230733
             this.ReportsButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
-            this.ModifyProductRadioButton = new System.Windows.Forms.RadioButton();
-            this.ComboBoxPanel = new System.Windows.Forms.Panel();
-            this.ProductComboBox = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ModifyButton = new System.Windows.Forms.Button();
             this.ProductManagementPanel.SuspendLayout();
+            this.ComboBoxPanel.SuspendLayout();
             this.ProductCategoryPanel.SuspendLayout();
             this.CategoryManagementPanel.SuspendLayout();
             this.AddCatGroupBox.SuspendLayout();
@@ -111,13 +112,12 @@ namespace EPOS_APPLICATION_20230733
             this.panel1.SuspendLayout();
             this.InventoryGroupBox.SuspendLayout();
             this.SearchPanel.SuspendLayout();
+            this.IDGroupBox.SuspendLayout();
             this.ItemFoundPanel.SuspendLayout();
             this.TranIDSearchGroupBox.SuspendLayout();
-            this.IDGroupBox.SuspendLayout();
             this.DateSearchGroupBox.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.ComboBoxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddProductButton
@@ -213,6 +213,43 @@ namespace EPOS_APPLICATION_20230733
             this.ProductManagementPanel.Size = new System.Drawing.Size(499, 451);
             this.ProductManagementPanel.TabIndex = 9;
             this.ProductManagementPanel.Visible = false;
+            // 
+            // ModifyButton
+            // 
+            this.ModifyButton.Location = new System.Drawing.Point(294, 372);
+            this.ModifyButton.Name = "ModifyButton";
+            this.ModifyButton.Size = new System.Drawing.Size(126, 41);
+            this.ModifyButton.TabIndex = 12;
+            this.ModifyButton.Text = "Modify Product";
+            this.ModifyButton.UseVisualStyleBackColor = true;
+            this.ModifyButton.Click += new System.EventHandler(this.ModifyButton_Click);
+            // 
+            // ComboBoxPanel
+            // 
+            this.ComboBoxPanel.Controls.Add(this.label8);
+            this.ComboBoxPanel.Controls.Add(this.ProductComboBox);
+            this.ComboBoxPanel.Location = new System.Drawing.Point(78, 16);
+            this.ComboBoxPanel.Name = "ComboBoxPanel";
+            this.ComboBoxPanel.Size = new System.Drawing.Size(353, 68);
+            this.ComboBoxPanel.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 17);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Select Product";
+            // 
+            // ProductComboBox
+            // 
+            this.ProductComboBox.FormattingEnabled = true;
+            this.ProductComboBox.Location = new System.Drawing.Point(141, 18);
+            this.ProductComboBox.Name = "ProductComboBox";
+            this.ProductComboBox.Size = new System.Drawing.Size(201, 24);
+            this.ProductComboBox.TabIndex = 0;
+            this.ProductComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductComboBox_SelectedIndexChanged);
             // 
             // ProductCategoryPanel
             // 
@@ -369,9 +406,9 @@ namespace EPOS_APPLICATION_20230733
             // OrderButton
             // 
             this.OrderButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderButton.Location = new System.Drawing.Point(438, 62);
+            this.OrderButton.Location = new System.Drawing.Point(417, 62);
             this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(136, 41);
+            this.OrderButton.Size = new System.Drawing.Size(157, 41);
             this.OrderButton.TabIndex = 0;
             this.OrderButton.Text = "Complete Order";
             this.OrderButton.UseVisualStyleBackColor = true;
@@ -509,6 +546,18 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryGroupBox.TabStop = false;
             this.InventoryGroupBox.Text = "Inventory Management";
             // 
+            // ModifyProductRadioButton
+            // 
+            this.ModifyProductRadioButton.AutoSize = true;
+            this.ModifyProductRadioButton.Location = new System.Drawing.Point(615, 35);
+            this.ModifyProductRadioButton.Name = "ModifyProductRadioButton";
+            this.ModifyProductRadioButton.Size = new System.Drawing.Size(123, 21);
+            this.ModifyProductRadioButton.TabIndex = 13;
+            this.ModifyProductRadioButton.TabStop = true;
+            this.ModifyProductRadioButton.Text = "Modify Product";
+            this.ModifyProductRadioButton.UseVisualStyleBackColor = true;
+            this.ModifyProductRadioButton.CheckedChanged += new System.EventHandler(this.ModifyProductRadioButton_CheckedChanged);
+            // 
             // AddProductRadioButton
             // 
             this.AddProductRadioButton.AutoSize = true;
@@ -545,6 +594,27 @@ namespace EPOS_APPLICATION_20230733
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(1236, 744);
             this.SearchPanel.TabIndex = 21;
+            // 
+            // IDGroupBox
+            // 
+            this.IDGroupBox.Controls.Add(this.FoundIDListBox);
+            this.IDGroupBox.Location = new System.Drawing.Point(28, 274);
+            this.IDGroupBox.Name = "IDGroupBox";
+            this.IDGroupBox.Size = new System.Drawing.Size(431, 419);
+            this.IDGroupBox.TabIndex = 7;
+            this.IDGroupBox.TabStop = false;
+            this.IDGroupBox.Text = "List of Transaction ID\'s";
+            this.IDGroupBox.Visible = false;
+            // 
+            // FoundIDListBox
+            // 
+            this.FoundIDListBox.FormattingEnabled = true;
+            this.FoundIDListBox.ItemHeight = 16;
+            this.FoundIDListBox.Location = new System.Drawing.Point(95, 36);
+            this.FoundIDListBox.Name = "FoundIDListBox";
+            this.FoundIDListBox.Size = new System.Drawing.Size(264, 340);
+            this.FoundIDListBox.TabIndex = 6;
+            this.FoundIDListBox.Click += new System.EventHandler(this.FoundIDListBox_Click);
             // 
             // ItemFoundPanel
             // 
@@ -656,27 +726,6 @@ namespace EPOS_APPLICATION_20230733
             this.label6.TabIndex = 2;
             this.label6.Text = "Transaction ID";
             // 
-            // IDGroupBox
-            // 
-            this.IDGroupBox.Controls.Add(this.FoundIDListBox);
-            this.IDGroupBox.Location = new System.Drawing.Point(28, 274);
-            this.IDGroupBox.Name = "IDGroupBox";
-            this.IDGroupBox.Size = new System.Drawing.Size(431, 419);
-            this.IDGroupBox.TabIndex = 7;
-            this.IDGroupBox.TabStop = false;
-            this.IDGroupBox.Text = "List of Transaction ID\'s";
-            this.IDGroupBox.Visible = false;
-            // 
-            // FoundIDListBox
-            // 
-            this.FoundIDListBox.FormattingEnabled = true;
-            this.FoundIDListBox.ItemHeight = 16;
-            this.FoundIDListBox.Location = new System.Drawing.Point(95, 36);
-            this.FoundIDListBox.Name = "FoundIDListBox";
-            this.FoundIDListBox.Size = new System.Drawing.Size(264, 340);
-            this.FoundIDListBox.TabIndex = 6;
-            this.FoundIDListBox.Click += new System.EventHandler(this.FoundIDListBox_Click);
-            // 
             // FindButton
             // 
             this.FindButton.Location = new System.Drawing.Point(190, 211);
@@ -764,7 +813,7 @@ namespace EPOS_APPLICATION_20230733
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.exit__1_;
-            this.ExitButton.Location = new System.Drawing.Point(4, 534);
+            this.ExitButton.Location = new System.Drawing.Point(4, 532);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(142, 80);
             this.ExitButton.TabIndex = 21;
@@ -797,7 +846,7 @@ namespace EPOS_APPLICATION_20230733
             this.ReportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReportsButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportsButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Report;
-            this.ReportsButton.Location = new System.Drawing.Point(4, 432);
+            this.ReportsButton.Location = new System.Drawing.Point(3, 313);
             this.ReportsButton.Name = "ReportsButton";
             this.ReportsButton.Size = new System.Drawing.Size(143, 80);
             this.ReportsButton.TabIndex = 14;
@@ -813,7 +862,7 @@ namespace EPOS_APPLICATION_20230733
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Search;
-            this.SearchButton.Location = new System.Drawing.Point(3, 328);
+            this.SearchButton.Location = new System.Drawing.Point(4, 213);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(143, 80);
             this.SearchButton.TabIndex = 13;
@@ -829,7 +878,7 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InventoryButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventoryButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.inventory;
-            this.InventoryButton.Location = new System.Drawing.Point(4, 222);
+            this.InventoryButton.Location = new System.Drawing.Point(4, 418);
             this.InventoryButton.Name = "InventoryButton";
             this.InventoryButton.Size = new System.Drawing.Size(143, 80);
             this.InventoryButton.TabIndex = 12;
@@ -838,55 +887,6 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.InventoryButton.UseVisualStyleBackColor = true;
             this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
-            // 
-            // ModifyProductRadioButton
-            // 
-            this.ModifyProductRadioButton.AutoSize = true;
-            this.ModifyProductRadioButton.Location = new System.Drawing.Point(615, 35);
-            this.ModifyProductRadioButton.Name = "ModifyProductRadioButton";
-            this.ModifyProductRadioButton.Size = new System.Drawing.Size(123, 21);
-            this.ModifyProductRadioButton.TabIndex = 13;
-            this.ModifyProductRadioButton.TabStop = true;
-            this.ModifyProductRadioButton.Text = "Modify Product";
-            this.ModifyProductRadioButton.UseVisualStyleBackColor = true;
-            this.ModifyProductRadioButton.CheckedChanged += new System.EventHandler(this.ModifyProductRadioButton_CheckedChanged);
-            // 
-            // ComboBoxPanel
-            // 
-            this.ComboBoxPanel.Controls.Add(this.label8);
-            this.ComboBoxPanel.Controls.Add(this.ProductComboBox);
-            this.ComboBoxPanel.Location = new System.Drawing.Point(78, 16);
-            this.ComboBoxPanel.Name = "ComboBoxPanel";
-            this.ComboBoxPanel.Size = new System.Drawing.Size(353, 68);
-            this.ComboBoxPanel.TabIndex = 11;
-            // 
-            // ProductComboBox
-            // 
-            this.ProductComboBox.FormattingEnabled = true;
-            this.ProductComboBox.Location = new System.Drawing.Point(141, 18);
-            this.ProductComboBox.Name = "ProductComboBox";
-            this.ProductComboBox.Size = new System.Drawing.Size(201, 24);
-            this.ProductComboBox.TabIndex = 0;
-            this.ProductComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductComboBox_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 17);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Select Product";
-            // 
-            // ModifyButton
-            // 
-            this.ModifyButton.Location = new System.Drawing.Point(294, 372);
-            this.ModifyButton.Name = "ModifyButton";
-            this.ModifyButton.Size = new System.Drawing.Size(126, 41);
-            this.ModifyButton.TabIndex = 12;
-            this.ModifyButton.Text = "Modify Product";
-            this.ModifyButton.UseVisualStyleBackColor = true;
-            this.ModifyButton.Click += new System.EventHandler(this.ModifyButton_Click);
             // 
             // MainForm
             // 
@@ -898,10 +898,13 @@ namespace EPOS_APPLICATION_20230733
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.InventoryGroupBox);
             this.Name = "MainForm";
+            this.Text = "Vijay Sales POS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ProductManagementPanel.ResumeLayout(false);
             this.ProductManagementPanel.PerformLayout();
+            this.ComboBoxPanel.ResumeLayout(false);
+            this.ComboBoxPanel.PerformLayout();
             this.ProductCategoryPanel.ResumeLayout(false);
             this.ProductCategoryPanel.PerformLayout();
             this.CategoryManagementPanel.ResumeLayout(false);
@@ -917,18 +920,16 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryGroupBox.ResumeLayout(false);
             this.InventoryGroupBox.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
+            this.IDGroupBox.ResumeLayout(false);
             this.ItemFoundPanel.ResumeLayout(false);
             this.ItemFoundPanel.PerformLayout();
             this.TranIDSearchGroupBox.ResumeLayout(false);
             this.TranIDSearchGroupBox.PerformLayout();
-            this.IDGroupBox.ResumeLayout(false);
             this.DateSearchGroupBox.ResumeLayout(false);
             this.DateSearchGroupBox.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ComboBoxPanel.ResumeLayout(false);
-            this.ComboBoxPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

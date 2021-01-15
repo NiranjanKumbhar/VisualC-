@@ -22,7 +22,7 @@ namespace EPOS_APPLICATION_20230733
         {
             string[] Item = new string[5];
             ListViewItem itm;
-
+           
             SummaryGroupBox.Visible     = false;
             LiveStockGroupBox.Visible   = true;
             TodaysSaleGroupBox.Visible  = false;
@@ -47,6 +47,7 @@ namespace EPOS_APPLICATION_20230733
             }
             TotalCategoriesLabel.Text   = MainForm.CategoryList.Count.ToString();
             TotalProductsLabel.Text     = MainForm.ProductList.Count.ToString();
+           
         }
 
         private void LiveStockButton_Click(object sender, EventArgs e)
@@ -157,12 +158,13 @@ namespace EPOS_APPLICATION_20230733
         {
             StreamWriter FileWriter;
 
-            string FileName;
+            string FileName, FileContent = "";
+            
 
             if (Sales == true)
                 FileName = "Daily_Sales_Report_" + DateTime.Now.ToShortDateString() + ".txt";
             else
-                FileName = "Daily_Stock_Report_" + DateTime.Now.ToShortDateString() + ".txt";
+                FileName = "Management_Stock_Report_" + DateTime.Now.ToShortDateString() + ".txt";
 
             if (File.Exists(FileName))
             {
@@ -170,49 +172,52 @@ namespace EPOS_APPLICATION_20230733
             }
 
             FileWriter = File.AppendText(FileName);
-            
-            if (Sales == true)
-                FileWriter.WriteLine("\n\t\tDaily Sales Report "+ DateTime.Now.ToShortDateString());
-            else
-                FileWriter.WriteLine("\n\t\tDaily Stock Report " + DateTime.Now.ToShortDateString());
 
-            if(Sales==true)
+            if (Sales == true)
+                FileContent = "\t\t\tDaily Sales Report" + Environment.NewLine;
+            else
+                FileContent = "\t\t\tManagement Stock Report" + Environment.NewLine;
+            
+
+            FileContent += "\t\t\t" + DateTime.Now.ToShortDateString() + Environment.NewLine;
+
+            if (Sales==true)
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
                 {
-                    FileWriter.WriteLine("\n\t\t\tCategory: " + MainForm.CategoryList[i]);
+
+                    FileContent += "\n\t\t\tCategory: " + MainForm.CategoryList[i]+Environment.NewLine;
+                    FileContent +=  string.Format("\t{0,-30}{1,-10}", "Product Name", "Quantity Sold")+Environment.NewLine;
+
                     for (int j = 0; j < MainForm.SaleProductIDs.Count; j++)
                     {
-                        if (MainForm.CategoryList[i] == MainForm.SaleProductIDs[j].ProductCategory)
-                        {
-                            FileWriter.WriteLine("\n\t"     + MainForm.SaleProductIDs[j].ProductName +
-                                                 "     \t"  + MainForm.SaleProductIDs[j].ProductQuantity);
-                        }
+                        if (MainForm.CategoryList[i] == MainForm.SaleProductIDs[j].ProductCategory
+                            && MainForm.SaleProductIDs[j].ProductQuantity > 0)
+                            FileContent+= string.Format("\t{0,-30}{1,-10}", MainForm.SaleProductIDs[j].ProductName, MainForm.SaleProductIDs[j].ProductQuantity) + Environment.NewLine;
+                        
                     }
-                    FileWriter.WriteLine("\n");
                 }
+                FileWriter.WriteLine(FileContent);
             }
             else
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
                 {
-                    FileWriter.WriteLine("\n\t\t\tCategory: " + MainForm.CategoryList[i]);
+                    FileContent += "\n\t\t\tCategory: " + MainForm.CategoryList[i] + Environment.NewLine;
+                    FileContent += string.Format("\t{0,-30}{1,-10}", "Product Name", "Quantity Available") + Environment.NewLine;
+                    
                     for (int j = 0; j < MainForm.ProductList.Count; j++)
                     {
                         if (MainForm.CategoryList[i] == MainForm.ProductList[j].ProductCategory)
-                        {
-                            FileWriter.WriteLine("\n\t"     + MainForm.ProductList[j].ProductName +
-                                                 "     \t"  + MainForm.ProductList[j].ProductQuantity);
-                        }
+                            FileContent += string.Format("\t{0,-30}{1,-10}", MainForm.ProductList[j].ProductName, MainForm.ProductList[j].ProductQuantity) + Environment.NewLine;
+                        
                     }
-                    FileWriter.WriteLine("\n");
                 }
+                FileWriter.WriteLine(FileContent);
             }
             FileWriter.Close();
-            if(Sales == true)
-                MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: " + FileName, "Downloaded");
-            else
-                MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
+            
+            MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
         }
     }
 }

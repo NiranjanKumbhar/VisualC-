@@ -18,10 +18,6 @@ namespace EPOS_APPLICATION_20230733
             InitializeComponent();
         }
 
-        private void ProductList_Load(object sender, EventArgs e)
-        {
-
-        }
 
         #region Properties
 

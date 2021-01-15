@@ -29,36 +29,36 @@ namespace EPOS_APPLICATION_20230733
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.CategoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // CategoryButton
             // 
-            this.button1.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.tag;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Category 1";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CategoryButton.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.tag;
+            this.CategoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CategoryButton.Location = new System.Drawing.Point(3, 3);
+            this.CategoryButton.Name = "CategoryButton";
+            this.CategoryButton.Size = new System.Drawing.Size(124, 48);
+            this.CategoryButton.TabIndex = 0;
+            this.CategoryButton.Text = "Category 1";
+            this.CategoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
             // 
             // ProductCategoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CategoryButton);
             this.Name = "ProductCategoryList";
-            this.Size = new System.Drawing.Size(130, 65);
-            this.Load += new System.EventHandler(this.ProductCategoryList_Load);
+            this.Size = new System.Drawing.Size(130, 65);           
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button CategoryButton;
     }
 }

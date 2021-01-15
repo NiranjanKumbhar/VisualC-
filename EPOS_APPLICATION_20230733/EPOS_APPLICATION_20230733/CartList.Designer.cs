@@ -138,11 +138,9 @@ namespace EPOS_APPLICATION_20230733
             this.Controls.Add(this.panel1);
             this.Name = "CartList";
             this.Size = new System.Drawing.Size(593, 56);
-            this.Load += new System.EventHandler(this.CartList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion

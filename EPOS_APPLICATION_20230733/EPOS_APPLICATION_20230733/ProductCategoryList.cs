@@ -25,12 +25,12 @@ namespace EPOS_APPLICATION_20230733
         public string CatName
         {
             get { return _CategoryName; }
-            set { _CategoryName = value; button1.Text = value; }
+            set { _CategoryName = value; CategoryButton.Text = value; }
         }
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CategoryButton_Click(object sender, EventArgs e)
         {
             MainForm frm = (MainForm)this.FindForm();
 
@@ -62,19 +62,13 @@ namespace EPOS_APPLICATION_20230733
                         {
                             if(Cartitem == NewProducts[j].ProdID)
                                 NewProducts[j].ProdAddButtonStatus = false;
-                        }
-                            
+                        } 
                     }
 
                     frm.ProductsFlowLayoutPanel.Controls.Add(NewProducts[j]);
                     j++;
                 }
             }
-        }
-
-        private void ProductCategoryList_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
