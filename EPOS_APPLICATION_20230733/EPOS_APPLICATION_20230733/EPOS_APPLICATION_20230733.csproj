@@ -204,5 +204,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

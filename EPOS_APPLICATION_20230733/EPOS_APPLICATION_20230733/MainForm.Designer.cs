@@ -29,6 +29,7 @@ namespace EPOS_APPLICATION_20230733
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AddProductButton = new System.Windows.Forms.Button();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,7 +88,6 @@ namespace EPOS_APPLICATION_20230733
             this.TranIDSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.TransactionIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.FindButton = new System.Windows.Forms.Button();
             this.DateSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SearchDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -100,6 +100,7 @@ namespace EPOS_APPLICATION_20230733
             this.ReportsButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
+            this.FindButton = new System.Windows.Forms.Button();
             this.ProductManagementPanel.SuspendLayout();
             this.ComboBoxPanel.SuspendLayout();
             this.ProductCategoryPanel.SuspendLayout();
@@ -539,9 +540,9 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryGroupBox.Controls.Add(this.AddCategoryRadioButton);
             this.InventoryGroupBox.Controls.Add(this.ProductManagementPanel);
             this.InventoryGroupBox.Controls.Add(this.CategoryManagementPanel);
-            this.InventoryGroupBox.Location = new System.Drawing.Point(210, 148);
+            this.InventoryGroupBox.Location = new System.Drawing.Point(171, 29);
             this.InventoryGroupBox.Name = "InventoryGroupBox";
-            this.InventoryGroupBox.Size = new System.Drawing.Size(1029, 599);
+            this.InventoryGroupBox.Size = new System.Drawing.Size(1199, 718);
             this.InventoryGroupBox.TabIndex = 20;
             this.InventoryGroupBox.TabStop = false;
             this.InventoryGroupBox.Text = "Inventory Management";
@@ -598,6 +599,7 @@ namespace EPOS_APPLICATION_20230733
             // IDGroupBox
             // 
             this.IDGroupBox.Controls.Add(this.FoundIDListBox);
+            this.IDGroupBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDGroupBox.Location = new System.Drawing.Point(28, 274);
             this.IDGroupBox.Name = "IDGroupBox";
             this.IDGroupBox.Size = new System.Drawing.Size(431, 419);
@@ -608,11 +610,12 @@ namespace EPOS_APPLICATION_20230733
             // 
             // FoundIDListBox
             // 
+            this.FoundIDListBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoundIDListBox.FormattingEnabled = true;
-            this.FoundIDListBox.ItemHeight = 16;
+            this.FoundIDListBox.ItemHeight = 17;
             this.FoundIDListBox.Location = new System.Drawing.Point(95, 36);
             this.FoundIDListBox.Name = "FoundIDListBox";
-            this.FoundIDListBox.Size = new System.Drawing.Size(264, 340);
+            this.FoundIDListBox.Size = new System.Drawing.Size(264, 327);
             this.FoundIDListBox.TabIndex = 6;
             this.FoundIDListBox.Click += new System.EventHandler(this.FoundIDListBox_Click);
             // 
@@ -627,73 +630,78 @@ namespace EPOS_APPLICATION_20230733
             this.ItemFoundPanel.Controls.Add(this.FoundTransactionListView);
             this.ItemFoundPanel.Location = new System.Drawing.Point(481, 22);
             this.ItemFoundPanel.Name = "ItemFoundPanel";
-            this.ItemFoundPanel.Size = new System.Drawing.Size(589, 670);
+            this.ItemFoundPanel.Size = new System.Drawing.Size(707, 670);
             this.ItemFoundPanel.TabIndex = 15;
             this.ItemFoundPanel.Visible = false;
             // 
             // TotalFoundLabel
             // 
             this.TotalFoundLabel.AutoSize = true;
-            this.TotalFoundLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalFoundLabel.Location = new System.Drawing.Point(488, 52);
+            this.TotalFoundLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalFoundLabel.Location = new System.Drawing.Point(567, 50);
             this.TotalFoundLabel.Name = "TotalFoundLabel";
-            this.TotalFoundLabel.Size = new System.Drawing.Size(61, 18);
+            this.TotalFoundLabel.Size = new System.Drawing.Size(62, 18);
             this.TotalFoundLabel.TabIndex = 14;
             this.TotalFoundLabel.Text = "label19";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(376, 52);
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(455, 50);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(84, 17);
+            this.label20.Size = new System.Drawing.Size(110, 19);
             this.label20.TabIndex = 13;
-            this.label20.Text = "Grand Total";
+            this.label20.Text = "Grand Total:  €";
             // 
             // DateFoundLabel
             // 
             this.DateFoundLabel.AutoSize = true;
-            this.DateFoundLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateFoundLabel.Location = new System.Drawing.Point(79, 51);
+            this.DateFoundLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateFoundLabel.Location = new System.Drawing.Point(89, 50);
             this.DateFoundLabel.Name = "DateFoundLabel";
-            this.DateFoundLabel.Size = new System.Drawing.Size(61, 18);
+            this.DateFoundLabel.Size = new System.Drawing.Size(62, 18);
             this.DateFoundLabel.TabIndex = 12;
             this.DateFoundLabel.Text = "label17";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 52);
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(29, 50);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 17);
+            this.label18.Size = new System.Drawing.Size(43, 19);
             this.label18.TabIndex = 11;
             this.label18.Text = "Date";
             // 
             // TransIDFoundLabel
             // 
             this.TransIDFoundLabel.AutoSize = true;
-            this.TransIDFoundLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransIDFoundLabel.Location = new System.Drawing.Point(315, 9);
+            this.TransIDFoundLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransIDFoundLabel.ForeColor = System.Drawing.Color.Red;
+            this.TransIDFoundLabel.Location = new System.Drawing.Point(366, 12);
             this.TransIDFoundLabel.Name = "TransIDFoundLabel";
-            this.TransIDFoundLabel.Size = new System.Drawing.Size(52, 18);
+            this.TransIDFoundLabel.Size = new System.Drawing.Size(54, 18);
             this.TransIDFoundLabel.TabIndex = 10;
             this.TransIDFoundLabel.Text = "label8";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(189, 9);
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(240, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 17);
+            this.label7.Size = new System.Drawing.Size(104, 19);
             this.label7.TabIndex = 9;
             this.label7.Text = "Transaction ID";
             // 
             // FoundTransactionListView
             // 
+            this.FoundTransactionListView.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoundTransactionListView.HideSelection = false;
-            this.FoundTransactionListView.Location = new System.Drawing.Point(16, 86);
+            this.FoundTransactionListView.Location = new System.Drawing.Point(26, 86);
             this.FoundTransactionListView.Name = "FoundTransactionListView";
-            this.FoundTransactionListView.Size = new System.Drawing.Size(559, 542);
+            this.FoundTransactionListView.Size = new System.Drawing.Size(650, 542);
             this.FoundTransactionListView.TabIndex = 8;
             this.FoundTransactionListView.UseCompatibleStateImageBehavior = false;
             this.FoundTransactionListView.Visible = false;
@@ -702,6 +710,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.TranIDSearchGroupBox.Controls.Add(this.TransactionIDSearchTextBox);
             this.TranIDSearchGroupBox.Controls.Add(this.label6);
+            this.TranIDSearchGroupBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TranIDSearchGroupBox.Location = new System.Drawing.Point(19, 96);
             this.TranIDSearchGroupBox.Name = "TranIDSearchGroupBox";
             this.TranIDSearchGroupBox.Size = new System.Drawing.Size(440, 108);
@@ -712,29 +721,22 @@ namespace EPOS_APPLICATION_20230733
             // 
             // TransactionIDSearchTextBox
             // 
+            this.TransactionIDSearchTextBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransactionIDSearchTextBox.Location = new System.Drawing.Point(171, 52);
             this.TransactionIDSearchTextBox.Name = "TransactionIDSearchTextBox";
-            this.TransactionIDSearchTextBox.Size = new System.Drawing.Size(197, 22);
+            this.TransactionIDSearchTextBox.Size = new System.Drawing.Size(197, 23);
             this.TransactionIDSearchTextBox.TabIndex = 3;
+            this.TransactionIDSearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(41, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 17);
+            this.label6.Size = new System.Drawing.Size(104, 19);
             this.label6.TabIndex = 2;
             this.label6.Text = "Transaction ID";
-            // 
-            // FindButton
-            // 
-            this.FindButton.Location = new System.Drawing.Point(190, 211);
-            this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(98, 44);
-            this.FindButton.TabIndex = 5;
-            this.FindButton.Text = "Find";
-            this.FindButton.UseVisualStyleBackColor = true;
-            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // DateSearchGroupBox
             // 
@@ -776,9 +778,10 @@ namespace EPOS_APPLICATION_20230733
             // TransIDSearchRadioButton
             // 
             this.TransIDSearchRadioButton.AutoSize = true;
+            this.TransIDSearchRadioButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransIDSearchRadioButton.Location = new System.Drawing.Point(209, 18);
             this.TransIDSearchRadioButton.Name = "TransIDSearchRadioButton";
-            this.TransIDSearchRadioButton.Size = new System.Drawing.Size(190, 21);
+            this.TransIDSearchRadioButton.Size = new System.Drawing.Size(197, 23);
             this.TransIDSearchRadioButton.TabIndex = 1;
             this.TransIDSearchRadioButton.TabStop = true;
             this.TransIDSearchRadioButton.Text = "Search By Transaction ID";
@@ -788,9 +791,10 @@ namespace EPOS_APPLICATION_20230733
             // DateSearchRadioButton
             // 
             this.DateSearchRadioButton.AutoSize = true;
+            this.DateSearchRadioButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateSearchRadioButton.Location = new System.Drawing.Point(48, 18);
             this.DateSearchRadioButton.Name = "DateSearchRadioButton";
-            this.DateSearchRadioButton.Size = new System.Drawing.Size(128, 21);
+            this.DateSearchRadioButton.Size = new System.Drawing.Size(136, 23);
             this.DateSearchRadioButton.TabIndex = 0;
             this.DateSearchRadioButton.TabStop = true;
             this.DateSearchRadioButton.Text = "Search By Date";
@@ -888,15 +892,34 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryButton.UseVisualStyleBackColor = true;
             this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
+            // FindButton
+            // 
+            this.FindButton.FlatAppearance.BorderSize = 0;
+            this.FindButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FindButton.ForeColor = System.Drawing.Color.Red;
+            this.FindButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.find_32;
+            this.FindButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FindButton.Location = new System.Drawing.Point(190, 211);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(98, 44);
+            this.FindButton.TabIndex = 5;
+            this.FindButton.Text = "Find";
+            this.FindButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Visible = false;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 747);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.InventoryGroupBox);
             this.Controls.Add(this.SalesPanel);
             this.Controls.Add(this.SearchPanel);
-            this.Controls.Add(this.InventoryGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Vijay Sales POS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

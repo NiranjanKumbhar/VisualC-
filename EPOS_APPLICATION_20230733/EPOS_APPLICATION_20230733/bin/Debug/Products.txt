@@ -1,10 +1,330 @@
 Elec858727
-Electronics
+Electronics & Acces
 SanDisk Ultra 64 GB
-12.20
-8
+12.2
+0
 Elec715833
-Electronics
+Electronics & Acces
 HDMI 2.0 Cable
 6.49
+3
+Elec182337
+Electronics & Acces
+LED Ring Light with Tripod Stand
+46.17
+12
+Elec632785
+Electronics & Acces
+Apple AirPods Pro
+224.21
+18
+Elec890849
+Electronics & Acces
+Sony WH-1000XM3 Headphones
+246.75
+7
+Elec639057
+Electronics & Acces
+Bose QuietComfort 35
+224.21
+19
+Elec298171
+Electronics & Acces
+Canon EOS 2000D
+460.82
+10
+Elec144591
+Electronics & Acces
+JBL Go2 Portable Speaker 
+21.41
+32
+Elec932144
+Electronics & Acces
+Bose Smart Soundbar 300
+450.67
+6
+Elec676280
+Electronics & Acces
+Fitbit Versa 3 Smartwatch
+224.21
+25
+Elec897313
+Electronics & Acces
+Apple Watch SE GPS
+303.08
+6
+Elec886173
+Electronics & Acces
+ORSKEY Dash Cam Front 
+37.17
+9
+Elec248415
+Electronics & Acces
+CISCO SYSTEMS CP-8841-3PCC
+235.48
+6
+Elec456862
+Electronics & Acces
+GoPro HERO 9 Black
+427.36
+10
+Mobi869857
+Mobiles
+Apple iPhone 12 (128GB) - Blue
+956.53
+10
+Mobi871768
+Mobiles
+Xiaomi Mi 10T Lite 5G
+281.09
+19
+Mobi233151
+Mobiles
+OPPO A9 2020
+167.88
+20
+Mobi785265
+Mobiles
+Samsung Galaxy A21s
+182.58
+15
+Mobi969792
+Mobiles
+Nokia 5.3
+168.95
+10
+Mobi303693
+Mobiles
+Nokia 8.3 5G
+394.33
+12
+Mobi714970
+Mobiles
+Samsung Galaxy A42 5G
+389.97
+13
+Mobi547297
+Mobiles
+Apple iPhone SE (256GB)
+618.56
+20
+Mobi057925
+Mobiles
+Apple iPhone 12 mini
+934.03
+15
+Mobi269674
+Mobiles
+Apple iPhone 12 Pro Max
+1238.24
+10
+Mobi600271
+Mobiles
+iPhone 11 64GB
+674.89
+8
+Mobi581970
+Mobiles
+Motorola G9 Plus 128 GB
+224.2
+17
+Mobi812311
+Mobiles
+Sony Xperia L4
+178
+10
+Comp024448
+Computers & Laptops
+Dell OptiPlex 3020 Monitor
+199.32
+5
+Comp532757
+Computers & Laptops
+Webcam with Microphone 1080P
+31.54
+10
+Comp242857
+Computers & Laptops
+Dell 27 Inch FullHD  Monitor
+179.15
+5
+Comp011899
+Computers & Laptops
+Wireless Mouse, Patuoxun
+9.68
+35
+Comp705643
+Computers & Laptops
+Apple MacBook Pro
+2420.15
+4
+Comp377574
+Computers & Laptops
+ASUS VivoBook R465JA Full HD
+449.55
+3
+Comp157484
+Computers & Laptops
+Apple iPad Air (10.9-inch)
+619.44
+16
+Comp179589
+Computers & Laptops
+Gigabyte27 Inch Curved Monitor
+270.4
+10
+Comp611718
+Computers & Laptops
+TP-Link Archer A7 AC1750 Router
+82.8
+15
+Comp639152
+Computers & Laptops
+Logitech K780 Multi-Device Wireless Keyboard 
+84.49
+10
+Comp363421
+Computers & Laptops
+Logitech M185 Wireless Mouse,
+14.64
+20
+Comp854337
+Computers & Laptops
+Canon CL-541 Ink Cartridge - Multi
+31.91
+25
+Comp658245
+Computers & Laptops
+Anker 4-Port USB 3.0 Ultra Slim Data Hub 
+13.51
+22
+Tele300268
+Televisions & Accessories
+LG 43 Inch UHD 4K HDR LED TV
+359.41
+15
+Tele052957
+Televisions & Accessories
+TCL 32-Inch LED Smart Android TV
+201.68
+20
+Tele327914
+Televisions & Accessories
+Samsung QLED 4K 50-inch Smart TV
+708.69
+3
+Tele149294
+Televisions & Accessories
+Sharp 1T32 Inch HD Ready LED TV
+167.88
+3
+Tele660905
+Televisions & Accessories
+Sony 32-Inch HD Smart TV
+259.13
+4
+Tele907521
+Televisions & Accessories
+Philips 75-inch 4K Ultra HD Smart TV
+1268.99
+2
+Tele659013
+Televisions & Accessories
+Panasonic 55 Inch 4K Ultra HDR LED
+505.89
+4
+Tele316773
+Televisions & Accessories
+Bose Solo 5 TV Sound System
+217.79
+5
+Tele839331
+Televisions & Accessories
+Sony Bluetooth Single Dolby Atmos Soundbar
+280.55
+5
+Tele967099
+Televisions & Accessories
+Sony4K Ultra HD Blu-Ray Disc Player
+212.95
+5
+Tele151629
+Televisions & Accessories
+Fire TV Stick Lite with Alexa
+33.79
+20
+Tele513869
+Televisions & Accessories
+Google Chromecast Streaming Stick
+33.80
+17
+Tele725540
+Televisions & Accessories
+ELEPHAS Portable Projector Full HD
+90.12
+5
+Home762189
+Home Appliances
+Russell Hobbs Mode Kettle 21400 
+31.54
+40
+Home262856
+Home Appliances
+Pro Breeze 4.2L Air Fryer 1400W 
+90.12
+10
+Home690486
+Home Appliances
+Breville Deep Fill Sandwich Toaster
+39.42
+20
+Home132366
+Home Appliances
+Russell Hobbs Ultra 3100 W  Iron
+36.05
+30
+Home064871
+Home Appliances
+Russell Hobbs Food Collection Hand Blender
+13.48
+20
+Home352957
+Home Appliances
+Nespresso Vertuo Plus, By Magimix 
+70.17
+20
+Home909262
+Home Appliances
+Deenkee Robot Vacuum and Mop,
+191.52
+10
+Home640058
+Home Appliances
+Warmlite WL44002 Thermo Fan Heater
+15.76
+40
+Home367551
+Home Appliances
+EXTSUD Humidifiers 500ml Cool Mist
+23.65
+50
+Home168158
+Home Appliances
+Cookology Tabletop Dishwasher
+236.60
+10
+Home972064
+Home Appliances
+Russell Hobbs 800 W Microwave
+80.46
+30
+Home519741
+Home Appliances
+NETTA Ice Maker Machine for Home
+157.73
+20
+Home250536
+Home Appliances
+Samsung 308 litres fridge-freezer
+562.22
 5

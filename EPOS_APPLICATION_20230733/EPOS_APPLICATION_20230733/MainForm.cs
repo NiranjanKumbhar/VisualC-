@@ -66,7 +66,7 @@ namespace EPOS_APPLICATION_20230733
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             Product Prod = new Product();
-            bool DuplicateProduct = false;
+            bool DuplicateProduct = false;  
             StreamWriter FileWriter;
             FileWriter = File.AppendText(PRODUCTDATABASEFILENAME);
 
@@ -522,6 +522,7 @@ namespace EPOS_APPLICATION_20230733
             DateSearchRadioButton.Checked = TransIDSearchRadioButton.Checked = false;
             DateSearchGroupBox.Visible = false;
             TranIDSearchGroupBox.Visible = false;
+            FindButton.Visible = false;
             ItemFoundPanel.Visible = false;
             FoundTransactionListView.Items.Clear();
             IDGroupBox.Visible = false;
@@ -560,16 +561,23 @@ namespace EPOS_APPLICATION_20230733
         {
             DateSearchGroupBox.Visible = true;
             TranIDSearchGroupBox.Visible = false;
+            IDGroupBox.Visible = false;
+            ItemFoundPanel.Visible = false;
+            FindButton.Visible = true;
         }
 
         private void TransIDSearchRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             DateSearchGroupBox.Visible = false;
             TranIDSearchGroupBox.Visible = true;
+            FindButton.Visible = true;
+            IDGroupBox.Visible = false;
+            ItemFoundPanel.Visible = false;
         }
 
         private void FindButton_Click(object sender, EventArgs e)
         {
+            FoundIDListBox.Items.Clear();
             string[] ItemList = { };
             string[] Item = new string[4];
             bool Found = false;
@@ -589,103 +597,129 @@ namespace EPOS_APPLICATION_20230733
                     }
                 }
 
-                if(Found == true)
+                if (Found == true)
                 {
                     IDGroupBox.Visible = true;
                 }
+                else
+                {
+                    IDGroupBox.Visible = false;
+                    ItemFoundPanel.Visible = false;
+                    MessageBox.Show("No Transactions found for the date :" + SearchDateTimePicker.Value.ToShortDateString());
+                    
+                }
+                    
             }
             else if(TransIDSearchRadioButton.Checked == true)
             {
-                for (int i = 0; i < Transactions.Length; i++)
+                if(TransactionIDSearchTextBox.Text!= "")
                 {
-                    if (Transactions[i, 0] == TransactionIDSearchTextBox.Text)
+                    for (int i = 0; i < Transactions.Length; i++)
                     {
-                        TransIDFoundLabel.Text = Transactions[i, 0];
-                        DateFoundLabel.Text = Transactions[i, 1];
-                        TotalFoundLabel.Text = Transactions[i, 3];
-                        ItemList = Transactions[i, 4].Split('_');
-                        Found = true;
-                        break;
-                    }
-                    else if (Transactions[i, 1] == null)
-                    {
-                        break;
-                    }
-                }
-
-                if (Found == true)
-                {
-                    ListViewItem itm;
-                    ItemFoundPanel.Visible = true;
-                    FoundTransactionListView.Visible = true;
-                    FoundTransactionListView.View = View.Details;
-                    FoundTransactionListView.Columns.Add("Product Category",100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Name"    ,100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Quantity",100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Price"   ,100, HorizontalAlignment.Center);
-
-                    for (int i = 0; i < ItemList.Length; i++)
-                    {
-                        Item[j] = ItemList[i];
-                        if (j == 3)
-                            j = 0;
-                        else
-                            j++;
-
-                        if (i % 3 == 0 && i != 0)
+                        if (Transactions[i, 0] == TransactionIDSearchTextBox.Text)
                         {
-                            itm = new ListViewItem(Item);
-                            FoundTransactionListView.Items.Add(itm);
+                            TransIDFoundLabel.Text = Transactions[i, 0];
+                            DateFoundLabel.Text = Transactions[i, 1];
+                            TotalFoundLabel.Text = Transactions[i, 3];
+                            ItemList = Transactions[i, 4].Split('_');
+                            Found = true;
+                            break;
+                        }
+                        else if (Transactions[i, 1] == null)
+                        {
+                            break;
                         }
                     }
-                }
 
+                    if (Found == true)
+                    {
+                        ListViewItem itm;
+                        ItemFoundPanel.Visible = true;
+                        FoundTransactionListView.Visible = true;
+                        FoundTransactionListView.View = View.Details;
+                        FoundTransactionListView.Columns.Add("Product Category", 150, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Name", 150, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Quantity", 120, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Price (€)", 100, HorizontalAlignment.Center);
+
+                        for (int i = 0; i < ItemList.Length; i++)
+                        {
+                            Item[j] = ItemList[i];
+                            if (j == 3)
+                                j = 0;
+                            else
+                                j++;
+
+                            if (i % 3 == 0 && i != 0)
+                            {
+                                itm = new ListViewItem(Item);
+                                FoundTransactionListView.Items.Add(itm);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        IDGroupBox.Visible = false;
+                        ItemFoundPanel.Visible = false;
+                        MessageBox.Show("No Transaction found with Transaction ID: " + TransactionIDSearchTextBox.Text);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Transaction ID to search particular transaction");
+                    TransactionIDLabel.Focus();
+                }
             }
         }
 
         private void FoundIDListBox_Click(object sender, EventArgs e)
         {
-            ListViewItem itm;
-            int j = 0;
-            string[] ItemList = { };
-            string[] Item = new string[4];
-            FoundTransactionListView.Clear();
-            for (int i = 0; i < Transactions.Length; i++)
+            if(FoundIDListBox.SelectedIndex != -1)
             {
-                if (Transactions[i, 0] == FoundIDListBox.SelectedItem.ToString())
+                
+                ListViewItem itm;
+                int j = 0;
+                string[] ItemList = { };
+                string[] Item = new string[4];
+                FoundTransactionListView.Clear();
+                for (int i = 0; i < Transactions.Length; i++)
                 {
-                    TransIDFoundLabel.Text = Transactions[i, 0];
-                    DateFoundLabel.Text = Transactions[i, 1];
-                    TotalFoundLabel.Text = Transactions[i, 3];
-                    ItemList = Transactions[i, 4].Split('_');
-
-                    FoundTransactionListView.View = View.Details;
-                    ItemFoundPanel.Visible = true;
-                    FoundTransactionListView.Visible = true;
-                    FoundTransactionListView.Columns.Add("Product Category", 100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Name", 100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Quantity", 100, HorizontalAlignment.Center);
-                    FoundTransactionListView.Columns.Add("Product Price", 100, HorizontalAlignment.Center);
-
-                    for ( i = 0; i < ItemList.Length; i++)
+                    if (Transactions[i, 0] == FoundIDListBox.SelectedItem.ToString())
                     {
-                        Item[j] = ItemList[i];
-                        if (j == 3)
-                            j = 0;
-                        else
-                            j++;
+                        TransIDFoundLabel.Text = Transactions[i, 0];
+                        DateFoundLabel.Text = Transactions[i, 1];
+                        TotalFoundLabel.Text = Transactions[i, 3];
+                        ItemList = Transactions[i, 4].Split('_');
 
-                        if (i % 3 == 0 && i != 0)
+                        FoundTransactionListView.View = View.Details;
+                        ItemFoundPanel.Visible = true;
+                        FoundTransactionListView.Visible = true;
+                        FoundTransactionListView.Columns.Add("Product Category", 140, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Name", 150, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Quantity", 100, HorizontalAlignment.Center);
+                        FoundTransactionListView.Columns.Add("Product Price (€)", 100, HorizontalAlignment.Center);
+
+                        for (i = 0; i < ItemList.Length; i++)
                         {
-                            itm = new ListViewItem(Item);
-                            FoundTransactionListView.Items.Add(itm);
+                            Item[j] = ItemList[i];
+                            if (j == 3)
+                                j = 0;
+                            else
+                                j++;
+
+                            if (j == 0 && Item[3] != null)
+                            {
+                                itm = new ListViewItem(Item);
+                                FoundTransactionListView.Items.Add(itm);
+                                Item[3] = null;
+                            }
                         }
+                        break;
                     }
-                    break;
-                }
-                else if (Transactions[i, 0] == null)
-                {
-                    break;
+                    else if (Transactions[i, 0] == null)
+                    {
+                        break;
+                    }
                 }
             }
         }

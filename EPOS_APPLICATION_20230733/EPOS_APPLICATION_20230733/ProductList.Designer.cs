@@ -57,7 +57,7 @@ namespace EPOS_APPLICATION_20230733
             this.AddToCartButton.ForeColor = System.Drawing.Color.Red;
             this.AddToCartButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.cart;
             this.AddToCartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddToCartButton.Location = new System.Drawing.Point(19, 134);
+            this.AddToCartButton.Location = new System.Drawing.Point(19, 135);
             this.AddToCartButton.Name = "AddToCartButton";
             this.AddToCartButton.Size = new System.Drawing.Size(96, 31);
             this.AddToCartButton.TabIndex = 3;
@@ -68,8 +68,8 @@ namespace EPOS_APPLICATION_20230733
             // 
             // ProductPriceLabel
             // 
-            this.ProductPriceLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductPriceLabel.Location = new System.Drawing.Point(3, 108);
+            this.ProductPriceLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceLabel.Location = new System.Drawing.Point(0, 108);
             this.ProductPriceLabel.Name = "ProductPriceLabel";
             this.ProductPriceLabel.Size = new System.Drawing.Size(131, 23);
             this.ProductPriceLabel.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductNameLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductNameLabel.Location = new System.Drawing.Point(-1, 0);
             this.ProductNameLabel.Name = "ProductNameLabel";
-            this.ProductNameLabel.Size = new System.Drawing.Size(135, 32);
+            this.ProductNameLabel.Size = new System.Drawing.Size(135, 49);
             this.ProductNameLabel.TabIndex = 1;
             this.ProductNameLabel.Text = "label1";
             this.ProductNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -89,10 +89,10 @@ namespace EPOS_APPLICATION_20230733
             // pictureBox1
             // 
             this.pictureBox1.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Item;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(66, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

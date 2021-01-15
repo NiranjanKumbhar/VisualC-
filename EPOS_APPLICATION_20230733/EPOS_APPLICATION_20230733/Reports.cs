@@ -18,10 +18,12 @@ namespace EPOS_APPLICATION_20230733
             InitializeComponent();
         }
 
+        string LowQuantityLine;
         private void Reports_Load(object sender, EventArgs e)
         {
             string[] Item = new string[5];
             ListViewItem itm;
+            int LowCount =0, ZeroCount=0;
            
             SummaryGroupBox.Visible     = false;
             LiveStockGroupBox.Visible   = true;
@@ -41,13 +43,27 @@ namespace EPOS_APPLICATION_20230733
                 Item[2] = MainForm.ProductList[i].ProductName;
                 Item[3] = MainForm.ProductList[i].ProductQuantity.ToString();
                 Item[4] = MainForm.ProductList[i].ProductPrice.ToString();
-                
+                if (MainForm.ProductList[i].ProductQuantity == 0)
+                {
+                    ZeroCount += 1;
+                    LowQuantityLine += "!!!Alert!!!" + MainForm.ProductList[i].ProductName + " is OUT OF STOCK  ";
+                }
+                else if (MainForm.ProductList[i].ProductQuantity < 5 )
+                { 
+                    LowCount += 1;
+                    LowQuantityLine += "!!!Caution!!! Product : " + MainForm.ProductList[i].ProductName + " has only "
+                        + MainForm.ProductList[i].ProductQuantity.ToString() + " Quantity left.      ";
+                }
                 itm     = new ListViewItem(Item);
                 LiveStockListView.Items.Add(itm);
             }
             TotalCategoriesLabel.Text   = MainForm.CategoryList.Count.ToString();
             TotalProductsLabel.Text     = MainForm.ProductList.Count.ToString();
-           
+            LowOnStockLabel.Text = LowCount.ToString();
+            OutOfStockLabel.Text = ZeroCount.ToString();
+            AnimateTextTimer.Start();
+            ReelLabel.Text = LowQuantityLine;
+
         }
 
         private void LiveStockButton_Click(object sender, EventArgs e)
@@ -108,6 +124,7 @@ namespace EPOS_APPLICATION_20230733
 
         private void TodaySaleButton_Click(object sender, EventArgs e)
         {
+            TodaySaleListView.Clear();
             SummaryGroupBox.Visible = false;
             LiveStockGroupBox.Visible = false;
             TodaysSaleGroupBox.Visible = true;
@@ -218,6 +235,11 @@ namespace EPOS_APPLICATION_20230733
             FileWriter.Close();
             
             MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
+        }
+
+        private void AnimateTextTimer_Tick(object sender, EventArgs e)
+        {
+            ReelLabel.Left -= 5;
         }
     }
 }

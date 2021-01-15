@@ -29,16 +29,22 @@ namespace EPOS_APPLICATION_20230733
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.GenerateTodaysReportButton = new System.Windows.Forms.Button();
             this.TodaySaleButton = new System.Windows.Forms.Button();
             this.SummaryButton = new System.Windows.Forms.Button();
             this.LiveStockButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.GenerateTodaysReportButton = new System.Windows.Forms.Button();
             this.SummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.SmallestSaleLabel = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LargestSaleLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.AverageSaleLabel = new System.Windows.Forms.Label();
             this.TotalItemsLabel = new System.Windows.Forms.Label();
             this.TotalSaleLabel = new System.Windows.Forms.Label();
@@ -48,21 +54,24 @@ namespace EPOS_APPLICATION_20230733
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LiveStockGroupBox = new System.Windows.Forms.GroupBox();
+            this.DownloadLiveReportButton = new System.Windows.Forms.Button();
             this.TotalCategoriesLabel = new System.Windows.Forms.Label();
             this.TotalProductsLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LiveStockListView = new System.Windows.Forms.ListView();
             this.TodaysSaleGroupBox = new System.Windows.Forms.GroupBox();
+            this.TodaySaleLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.TodaySaleListView = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TodaySaleLabel = new System.Windows.Forms.Label();
-            this.DownloadLiveReportButton = new System.Windows.Forms.Button();
-            this.LargestSaleLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.SmallestSaleLabel = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.OutOfStockLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LowOnStockLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ReelLabel = new System.Windows.Forms.Label();
+            this.AnimateTextTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SummaryGroupBox.SuspendLayout();
@@ -106,21 +115,10 @@ namespace EPOS_APPLICATION_20230733
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.Exitbutton_Click);
             // 
-            // GenerateTodaysReportButton
-            // 
-            this.GenerateTodaysReportButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerateTodaysReportButton.Location = new System.Drawing.Point(462, 700);
-            this.GenerateTodaysReportButton.Name = "GenerateTodaysReportButton";
-            this.GenerateTodaysReportButton.Size = new System.Drawing.Size(148, 50);
-            this.GenerateTodaysReportButton.TabIndex = 3;
-            this.GenerateTodaysReportButton.Text = "Download Report";
-            this.GenerateTodaysReportButton.UseVisualStyleBackColor = true;
-            this.GenerateTodaysReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
-            // 
             // TodaySaleButton
             // 
             this.TodaySaleButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TodaySaleButton.Location = new System.Drawing.Point(3, 307);
+            this.TodaySaleButton.Location = new System.Drawing.Point(3, 207);
             this.TodaySaleButton.Name = "TodaySaleButton";
             this.TodaySaleButton.Size = new System.Drawing.Size(155, 94);
             this.TodaySaleButton.TabIndex = 2;
@@ -131,7 +129,7 @@ namespace EPOS_APPLICATION_20230733
             // SummaryButton
             // 
             this.SummaryButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SummaryButton.Location = new System.Drawing.Point(2, 207);
+            this.SummaryButton.Location = new System.Drawing.Point(2, 307);
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(155, 94);
             this.SummaryButton.TabIndex = 1;
@@ -168,6 +166,17 @@ namespace EPOS_APPLICATION_20230733
             this.button1.Text = "Live Stock";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // GenerateTodaysReportButton
+            // 
+            this.GenerateTodaysReportButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenerateTodaysReportButton.Location = new System.Drawing.Point(462, 700);
+            this.GenerateTodaysReportButton.Name = "GenerateTodaysReportButton";
+            this.GenerateTodaysReportButton.Size = new System.Drawing.Size(148, 50);
+            this.GenerateTodaysReportButton.TabIndex = 3;
+            this.GenerateTodaysReportButton.Text = "Download Report";
+            this.GenerateTodaysReportButton.UseVisualStyleBackColor = true;
+            this.GenerateTodaysReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
+            // 
             // SummaryGroupBox
             // 
             this.SummaryGroupBox.Controls.Add(this.SmallestSaleLabel);
@@ -188,6 +197,48 @@ namespace EPOS_APPLICATION_20230733
             this.SummaryGroupBox.TabIndex = 1;
             this.SummaryGroupBox.TabStop = false;
             this.SummaryGroupBox.Text = "Summary";
+            // 
+            // SmallestSaleLabel
+            // 
+            this.SmallestSaleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SmallestSaleLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SmallestSaleLabel.Location = new System.Drawing.Point(388, 313);
+            this.SmallestSaleLabel.Name = "SmallestSaleLabel";
+            this.SmallestSaleLabel.Size = new System.Drawing.Size(193, 23);
+            this.SmallestSaleLabel.TabIndex = 11;
+            this.SmallestSaleLabel.Text = "label";
+            this.SmallestSaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(224, 314);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(141, 19);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Smallest Single Sale";
+            // 
+            // LargestSaleLabel
+            // 
+            this.LargestSaleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LargestSaleLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LargestSaleLabel.Location = new System.Drawing.Point(388, 265);
+            this.LargestSaleLabel.Name = "LargestSaleLabel";
+            this.LargestSaleLabel.Size = new System.Drawing.Size(193, 23);
+            this.LargestSaleLabel.TabIndex = 9;
+            this.LargestSaleLabel.Text = "label";
+            this.LargestSaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(232, 266);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 19);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Largest Single Sale";
             // 
             // AverageSaleLabel
             // 
@@ -257,11 +308,11 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(285, 122);
+            this.label4.Location = new System.Drawing.Point(246, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 19);
+            this.label4.Size = new System.Drawing.Size(115, 19);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Total Sale";
+            this.label4.Text = "Total Collection";
             // 
             // label3
             // 
@@ -275,24 +326,41 @@ namespace EPOS_APPLICATION_20230733
             // 
             // LiveStockGroupBox
             // 
+            this.LiveStockGroupBox.Controls.Add(this.ReelLabel);
+            this.LiveStockGroupBox.Controls.Add(this.label8);
+            this.LiveStockGroupBox.Controls.Add(this.LowOnStockLabel);
+            this.LiveStockGroupBox.Controls.Add(this.label11);
+            this.LiveStockGroupBox.Controls.Add(this.OutOfStockLabel);
+            this.LiveStockGroupBox.Controls.Add(this.label9);
             this.LiveStockGroupBox.Controls.Add(this.DownloadLiveReportButton);
             this.LiveStockGroupBox.Controls.Add(this.TotalCategoriesLabel);
             this.LiveStockGroupBox.Controls.Add(this.TotalProductsLabel);
             this.LiveStockGroupBox.Controls.Add(this.label2);
             this.LiveStockGroupBox.Controls.Add(this.label1);
             this.LiveStockGroupBox.Controls.Add(this.LiveStockListView);
-            this.LiveStockGroupBox.Location = new System.Drawing.Point(164, 24);
+            this.LiveStockGroupBox.Location = new System.Drawing.Point(164, 33);
             this.LiveStockGroupBox.Name = "LiveStockGroupBox";
-            this.LiveStockGroupBox.Size = new System.Drawing.Size(998, 748);
+            this.LiveStockGroupBox.Size = new System.Drawing.Size(992, 748);
             this.LiveStockGroupBox.TabIndex = 0;
             this.LiveStockGroupBox.TabStop = false;
-            this.LiveStockGroupBox.Text = "Live Stock";
+            this.LiveStockGroupBox.Text = "Current Stock";
+            // 
+            // DownloadLiveReportButton
+            // 
+            this.DownloadLiveReportButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloadLiveReportButton.Location = new System.Drawing.Point(436, 624);
+            this.DownloadLiveReportButton.Name = "DownloadLiveReportButton";
+            this.DownloadLiveReportButton.Size = new System.Drawing.Size(148, 50);
+            this.DownloadLiveReportButton.TabIndex = 6;
+            this.DownloadLiveReportButton.Text = "Download Report";
+            this.DownloadLiveReportButton.UseVisualStyleBackColor = true;
+            this.DownloadLiveReportButton.Click += new System.EventHandler(this.DownloadLiveReportButton_Click);
             // 
             // TotalCategoriesLabel
             // 
             this.TotalCategoriesLabel.AutoSize = true;
             this.TotalCategoriesLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalCategoriesLabel.Location = new System.Drawing.Point(282, 614);
+            this.TotalCategoriesLabel.Location = new System.Drawing.Point(353, 535);
             this.TotalCategoriesLabel.Name = "TotalCategoriesLabel";
             this.TotalCategoriesLabel.Size = new System.Drawing.Size(16, 18);
             this.TotalCategoriesLabel.TabIndex = 5;
@@ -303,7 +371,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.TotalProductsLabel.AutoSize = true;
             this.TotalProductsLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalProductsLabel.Location = new System.Drawing.Point(780, 614);
+            this.TotalProductsLabel.Location = new System.Drawing.Point(799, 535);
             this.TotalProductsLabel.Name = "TotalProductsLabel";
             this.TotalProductsLabel.Size = new System.Drawing.Size(16, 18);
             this.TotalProductsLabel.TabIndex = 4;
@@ -314,7 +382,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(642, 614);
+            this.label2.Location = new System.Drawing.Point(661, 535);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 2;
@@ -324,7 +392,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(137, 614);
+            this.label1.Location = new System.Drawing.Point(156, 535);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 18);
             this.label1.TabIndex = 1;
@@ -335,7 +403,7 @@ namespace EPOS_APPLICATION_20230733
             this.LiveStockListView.HideSelection = false;
             this.LiveStockListView.Location = new System.Drawing.Point(139, 23);
             this.LiveStockListView.Name = "LiveStockListView";
-            this.LiveStockListView.Size = new System.Drawing.Size(697, 570);
+            this.LiveStockListView.Size = new System.Drawing.Size(697, 481);
             this.LiveStockListView.TabIndex = 0;
             this.LiveStockListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -351,6 +419,26 @@ namespace EPOS_APPLICATION_20230733
             this.TodaysSaleGroupBox.TabIndex = 2;
             this.TodaysSaleGroupBox.TabStop = false;
             this.TodaysSaleGroupBox.Text = "Today\'s Sale";
+            // 
+            // TodaySaleLabel
+            // 
+            this.TodaySaleLabel.AutoSize = true;
+            this.TodaySaleLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TodaySaleLabel.Location = new System.Drawing.Point(330, 667);
+            this.TodaySaleLabel.Name = "TodaySaleLabel";
+            this.TodaySaleLabel.Size = new System.Drawing.Size(18, 19);
+            this.TodaySaleLabel.TabIndex = 2;
+            this.TodaySaleLabel.Text = "S";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(196, 667);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 19);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Today\'s Sale:";
             // 
             // TodaySaleListView
             // 
@@ -371,78 +459,72 @@ namespace EPOS_APPLICATION_20230733
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // label7
+            // OutOfStockLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(196, 667);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 19);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Today\'s Sale:";
+            this.OutOfStockLabel.AutoSize = true;
+            this.OutOfStockLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutOfStockLabel.Location = new System.Drawing.Point(353, 568);
+            this.OutOfStockLabel.Name = "OutOfStockLabel";
+            this.OutOfStockLabel.Size = new System.Drawing.Size(16, 18);
+            this.OutOfStockLabel.TabIndex = 8;
+            this.OutOfStockLabel.Text = "0";
+            this.OutOfStockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TodaySaleLabel
+            // label9
             // 
-            this.TodaySaleLabel.AutoSize = true;
-            this.TodaySaleLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TodaySaleLabel.Location = new System.Drawing.Point(330, 667);
-            this.TodaySaleLabel.Name = "TodaySaleLabel";
-            this.TodaySaleLabel.Size = new System.Drawing.Size(18, 19);
-            this.TodaySaleLabel.TabIndex = 2;
-            this.TodaySaleLabel.Text = "S";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(156, 568);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(163, 18);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Out of Stock Products";
             // 
-            // DownloadLiveReportButton
+            // LowOnStockLabel
             // 
-            this.DownloadLiveReportButton.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DownloadLiveReportButton.Location = new System.Drawing.Point(403, 673);
-            this.DownloadLiveReportButton.Name = "DownloadLiveReportButton";
-            this.DownloadLiveReportButton.Size = new System.Drawing.Size(148, 50);
-            this.DownloadLiveReportButton.TabIndex = 6;
-            this.DownloadLiveReportButton.Text = "Download Report";
-            this.DownloadLiveReportButton.UseVisualStyleBackColor = true;
-            this.DownloadLiveReportButton.Click += new System.EventHandler(this.DownloadLiveReportButton_Click);
+            this.LowOnStockLabel.AutoSize = true;
+            this.LowOnStockLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LowOnStockLabel.Location = new System.Drawing.Point(799, 568);
+            this.LowOnStockLabel.Name = "LowOnStockLabel";
+            this.LowOnStockLabel.Size = new System.Drawing.Size(16, 18);
+            this.LowOnStockLabel.TabIndex = 10;
+            this.LowOnStockLabel.Text = "0";
+            this.LowOnStockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LargestSaleLabel
+            // label11
             // 
-            this.LargestSaleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LargestSaleLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LargestSaleLabel.Location = new System.Drawing.Point(388, 265);
-            this.LargestSaleLabel.Name = "LargestSaleLabel";
-            this.LargestSaleLabel.Size = new System.Drawing.Size(193, 23);
-            this.LargestSaleLabel.TabIndex = 9;
-            this.LargestSaleLabel.Text = "label";
-            this.LargestSaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(598, 568);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(171, 18);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Low on Stock Products";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(269, 266);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 19);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Largest Sale";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(604, 586);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 19);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "(Less than 5 quantity)";
             // 
-            // SmallestSaleLabel
+            // ReelLabel
             // 
-            this.SmallestSaleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SmallestSaleLabel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SmallestSaleLabel.Location = new System.Drawing.Point(388, 313);
-            this.SmallestSaleLabel.Name = "SmallestSaleLabel";
-            this.SmallestSaleLabel.Size = new System.Drawing.Size(193, 23);
-            this.SmallestSaleLabel.TabIndex = 11;
-            this.SmallestSaleLabel.Text = "label";
-            this.SmallestSaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReelLabel.AutoSize = true;
+            this.ReelLabel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReelLabel.ForeColor = System.Drawing.Color.Red;
+            this.ReelLabel.Location = new System.Drawing.Point(907, 701);
+            this.ReelLabel.Name = "ReelLabel";
+            this.ReelLabel.Size = new System.Drawing.Size(78, 22);
+            this.ReelLabel.TabIndex = 12;
+            this.ReelLabel.Text = "label13";
             // 
-            // label12
+            // AnimateTextTimer
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(264, 314);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 19);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Smallest Sale";
+            this.AnimateTextTimer.Tick += new System.EventHandler(this.AnimateTextTimer_Tick);
             // 
             // Reports
             // 
@@ -451,10 +533,11 @@ namespace EPOS_APPLICATION_20230733
             this.ClientSize = new System.Drawing.Size(1170, 772);
             this.Controls.Add(this.LiveStockGroupBox);
             this.Controls.Add(this.TodaysSaleGroupBox);
-            this.Controls.Add(this.SummaryGroupBox);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SummaryGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reports";
-            this.Text = "Reports";
+            this.Text = "Vijay Sales Electrical Management Report System";
             this.Load += new System.EventHandler(this.Reports_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -505,5 +588,12 @@ namespace EPOS_APPLICATION_20230733
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label LargestSaleLabel;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label OutOfStockLabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LowOnStockLabel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ReelLabel;
+        private System.Windows.Forms.Timer AnimateTextTimer;
     }
 }
