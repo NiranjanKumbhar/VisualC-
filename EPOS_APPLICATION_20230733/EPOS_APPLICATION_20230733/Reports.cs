@@ -19,17 +19,21 @@ namespace EPOS_APPLICATION_20230733
         }
 
         string LowQuantityLine;
+
+        //Event Handler for Form Load Event
         private void Reports_Load(object sender, EventArgs e)
         {
             string[] Item = new string[5];
             ListViewItem itm;
             int LowCount =0, ZeroCount=0;
-           
+
+            //Initializing UI controls
             SummaryGroupBox.Visible     = false;
             LiveStockGroupBox.Visible   = true;
             TodaysSaleGroupBox.Visible  = false;
             LiveStockListView.View      = View.Details;
 
+            //Adding Columns to the ListView
             LiveStockListView.Columns.Add("Product ID", 100, HorizontalAlignment.Center);
             LiveStockListView.Columns.Add("Product Category", 100, HorizontalAlignment.Center);
             LiveStockListView.Columns.Add("Product Name", 100, HorizontalAlignment.Center);
@@ -54,15 +58,18 @@ namespace EPOS_APPLICATION_20230733
                     LowQuantityLine += "!!!Caution!!! Product : " + MainForm.ProductList[i].ProductName + " has only "
                         + MainForm.ProductList[i].ProductQuantity.ToString() + " Quantity left.      ";
                 }
-                itm     = new ListViewItem(Item);
+
+                itm  = new ListViewItem(Item);
                 LiveStockListView.Items.Add(itm);
             }
+
             TotalCategoriesLabel.Text   = MainForm.CategoryList.Count.ToString();
             TotalProductsLabel.Text     = MainForm.ProductList.Count.ToString();
-            LowOnStockLabel.Text = LowCount.ToString();
-            OutOfStockLabel.Text = ZeroCount.ToString();
+            LowOnStockLabel.Text        = LowCount.ToString();
+            OutOfStockLabel.Text        = ZeroCount.ToString();
+            ReelLabel.Text              = LowQuantityLine;
             AnimateTextTimer.Start();
-            ReelLabel.Text = LowQuantityLine;
+            
 
         }
 
@@ -163,20 +170,18 @@ namespace EPOS_APPLICATION_20230733
 
         private void GenerateReportButton_Click(object sender, EventArgs e)
         {
-            GenerateReport(true);
+            GenerateReport(true,false);
         }
 
         private void DownloadLiveReportButton_Click(object sender, EventArgs e)
         {
-            GenerateReport(false);
+            GenerateReport(false,false);
         }
 
-        public void GenerateReport(bool Sales)
+        public void GenerateReport(bool Sales,bool Exit)
         {
             StreamWriter FileWriter;
-
-            string FileName, FileContent = "";
-            
+            string FileName;
 
             if (Sales == true)
                 FileName = "Daily_Sales_Report_" + DateTime.Now.ToShortDateString() + ".txt";
@@ -184,34 +189,31 @@ namespace EPOS_APPLICATION_20230733
                 FileName = "Management_Stock_Report_" + DateTime.Now.ToShortDateString() + ".txt";
 
             if (File.Exists(FileName))
-            {
                 File.Delete(FileName);
-            }
-
+            
             FileWriter = File.AppendText(FileName);
+            string FileContent;
 
             if (Sales == true)
-                FileContent = "\t\t\tDaily Sales Report" + Environment.NewLine;
+                FileContent = "\t\t\t\tDaily Sales Report" + Environment.NewLine;
             else
-                FileContent = "\t\t\tManagement Stock Report" + Environment.NewLine;
-            
+                FileContent = "\t\t\t\tManagement Stock Report" + Environment.NewLine;
 
-            FileContent += "\t\t\t" + DateTime.Now.ToShortDateString() + Environment.NewLine;
+            FileContent += "\t\t\t\t" + DateTime.Now.ToShortDateString() + Environment.NewLine;
+            FileContent += "\t\t\t\t" + DateTime.Now.ToShortTimeString() + Environment.NewLine;
 
             if (Sales==true)
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
                 {
-
-                    FileContent += "\n\t\t\tCategory: " + MainForm.CategoryList[i]+Environment.NewLine;
-                    FileContent +=  string.Format("\t{0,-30}{1,-10}", "Product Name", "Quantity Sold")+Environment.NewLine;
+                    FileContent += "\n\t\t\t\tCategory: " + MainForm.CategoryList[i]+Environment.NewLine;
+                    FileContent +=  string.Format("\t{0,-50}{1,-10}", "Product Name", "Quantity Sold")+Environment.NewLine;
 
                     for (int j = 0; j < MainForm.SaleProductIDs.Count; j++)
                     {
                         if (MainForm.CategoryList[i] == MainForm.SaleProductIDs[j].ProductCategory
                             && MainForm.SaleProductIDs[j].ProductQuantity > 0)
-                            FileContent+= string.Format("\t{0,-30}{1,-10}", MainForm.SaleProductIDs[j].ProductName, MainForm.SaleProductIDs[j].ProductQuantity) + Environment.NewLine;
-                        
+                            FileContent+= string.Format("\t{0,-50}{1,-10}", MainForm.SaleProductIDs[j].ProductName, MainForm.SaleProductIDs[j].ProductQuantity) + Environment.NewLine;
                     }
                 }
                 FileWriter.WriteLine(FileContent);
@@ -220,26 +222,27 @@ namespace EPOS_APPLICATION_20230733
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
                 {
-                    FileContent += "\n\t\t\tCategory: " + MainForm.CategoryList[i] + Environment.NewLine;
-                    FileContent += string.Format("\t{0,-30}{1,-10}", "Product Name", "Quantity Available") + Environment.NewLine;
+                    FileContent += "\n\t\t\t\tCategory: " + MainForm.CategoryList[i] + Environment.NewLine;
+                    FileContent += string.Format("\t{0,-50}{1,-10}", "Product Name", "Quantity Available") + Environment.NewLine;
                     
                     for (int j = 0; j < MainForm.ProductList.Count; j++)
                     {
                         if (MainForm.CategoryList[i] == MainForm.ProductList[j].ProductCategory)
-                            FileContent += string.Format("\t{0,-30}{1,-10}", MainForm.ProductList[j].ProductName, MainForm.ProductList[j].ProductQuantity) + Environment.NewLine;
-                        
+                            FileContent += string.Format("\t{0,-50}{1,-10}", MainForm.ProductList[j].ProductName, MainForm.ProductList[j].ProductQuantity) + Environment.NewLine;
                     }
                 }
                 FileWriter.WriteLine(FileContent);
             }
             FileWriter.Close();
             
-            MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
+            if(!Exit)
+                MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
         }
 
         private void AnimateTextTimer_Tick(object sender, EventArgs e)
         {
             ReelLabel.Left -= 5;
         }
+
     }
 }

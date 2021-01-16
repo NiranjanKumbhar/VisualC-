@@ -12,27 +12,24 @@ namespace EPOS_APPLICATION_20230733
         }
 
         #region Properties
-
-        private string _ProductName;
-        private int _ProductQuantity;
+        //User Control Properties for cart item
         private decimal _ProductTotal;
         private decimal _ProductPrice;
         private string _ProductID;
         private string _ProductCategory;
 
-
         [Category("Custom List")]
         public string ProdName
         {
             get { return ProductNameLabel.Text; }
-            set { _ProductName = value; ProductNameLabel.Text = value; }
+            set { ProductNameLabel.Text = value; }
         }
 
         [Category("Custom List")]
         public int ProdQuantity
         {
             get { return int.Parse(QuantityTextBox.Text); }
-            set { _ProductQuantity = value; QuantityTextBox.Text = value.ToString(); }
+            set { QuantityTextBox.Text = value.ToString(); }
         }
 
         [Category("Custom List")]
@@ -64,15 +61,19 @@ namespace EPOS_APPLICATION_20230733
         }
         #endregion
 
+        //Event Handler for Delete Product Button
+        //Removed One Product from Cart
+        //Recalculate total cart price
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
             RemoveControl();
         }
-
+        //Method to remove one usercontrol from Cart
         private void RemoveControl()
         {            
             MainForm frm = (MainForm)this.FindForm();
 
+            //Enabling the AddtoCart Button
             foreach (ProductList Ctrl in frm.ProductsFlowLayoutPanel.Controls)
             {
                 if(Ctrl.ProdCat == this.ProdCat 
@@ -82,24 +83,32 @@ namespace EPOS_APPLICATION_20230733
                     break;
                 }
             }
+            //Recalculating Items and Cart Value
             MainForm.TotalItems -= int.Parse(this.QuantityTextBox.Text);
             MainForm.GrandTotal -= decimal.Parse(this.ProductTotalPriceLabel.Text);
             frm.TotalItemsLabel.Text = MainForm.TotalItems.ToString();
             frm.GrandTotalLabel.Text = MainForm.GrandTotal.ToString();
             MainForm.CurrentCartProducts.Remove(this.ProdID);
+            //Removes Product
             this.Parent.Controls.Remove(this);
         }
 
+        //Event Handler for Add Button in Cart
         private void AddButton_Click(object sender, EventArgs e)
         {
-            
+                //Conveting CUrrent quantity to integer
                 int.TryParse(QuantityTextBox.Text, out int CurrentValue);
+                //Adding 1 to current quantity
                 CurrentValue += 1;
+                //Finding the product in List in conventional Way using sequencial search
+                //We can use List Find methods as well in order to find and return us the direct item from list
                 for (int i= 0;i< MainForm.ProductList.Count;i++)
                 {
+                    //Matching product selected from list, if Found, Adding one product to the cart 
                     if (MainForm.ProductList[i].ProductCategory == this.ProdCat
                      && MainForm.ProductList[i].ProductID       == this.ProdID)
                     {
+                        //Check if Stock is available
                         if(CurrentValue <= MainForm.ProductList[i].ProductQuantity)
                         {
                             MainForm.TotalItems += 1;
@@ -113,46 +122,48 @@ namespace EPOS_APPLICATION_20230733
                         }
                         else
                         {
-                            MessageBox.Show("Not enough items in inventory");
+                            MessageBox.Show("Requested Quantities of "+ this.ProdName + " are not available in inventory",
+                                "Not Enough Items Available",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            QuantityTextBox.Focus();
                         }
                     }
                 }
             
         }
 
+        //Event Handler for Remove Button in Cart
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            try
+            //Converting Quantity to Interger
+            int.TryParse(QuantityTextBox.Text, out int CurrentValue);
+            //Decreasing one quantity from current Quantity
+            CurrentValue -= 1;
+            
+            if (CurrentValue >= 1)
             {
-                int.TryParse(QuantityTextBox.Text, out int CurrentValue);
-                CurrentValue -= 1;
-                if (CurrentValue >= 1)
-                {
-                    MainForm.TotalItems -= 1;
-                    MainForm.GrandTotal -= this._ProductPrice;
-                    MainForm frm = (MainForm)this.FindForm();
-                    frm.TotalItemsLabel.Text = MainForm.TotalItems.ToString();
-                    frm.GrandTotalLabel.Text = MainForm.GrandTotal.ToString();
-                    QuantityTextBox.Text = CurrentValue.ToString();
-                    ProductTotalPriceLabel.Text = (CurrentValue * this._ProductPrice).ToString();
-                }
-                else
-                    MessageBox.Show("You can delete the item from your cart by using delete button");
+                //Recalculating Totals and total Items
+                MainForm.TotalItems -= 1;
+                MainForm.GrandTotal -= this._ProductPrice;
+                MainForm frm = (MainForm)this.FindForm();
+                frm.TotalItemsLabel.Text = MainForm.TotalItems.ToString();
+                frm.GrandTotalLabel.Text = MainForm.GrandTotal.ToString();
+                QuantityTextBox.Text = CurrentValue.ToString();
+                ProductTotalPriceLabel.Text = (CurrentValue * this._ProductPrice).ToString();
             }
-            catch
-            {
-
-            }
+            else
+                MessageBox.Show("You can delete this item from your cart by using Delete button(at the end)",
+                                "Quantity can not be Zero", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        //Event Handler for QuantityTextBox change
+        //If user directly enters value of quantity
         private void QuantityTextBox_Leave(object sender, EventArgs e)
         {
             int Value = 0;
             try
             {
-                int.Parse(QuantityTextBox.Text);
-                //int.TryParse(QuantityTextBox.Text, out int CurrentValue);
-                int CurrentValue = int.Parse(QuantityTextBox.Text);
+                int CurrentValue =  int.Parse(QuantityTextBox.Text);
+                //checking if input is less than zero
                 if (CurrentValue <= 0)
                 {
                     MessageBox.Show("Zero or Less quantity not Allowed. You can use delete button to remove the product from Cart");
@@ -161,15 +172,19 @@ namespace EPOS_APPLICATION_20230733
                     QuantityTextBox.Focus();
 
                 }
+                //if input is greater than 0
                 else
                 {
                     for (int i = 0; i < MainForm.ProductList.Count; i++)
                     {
+                        //finding the product
                         if (MainForm.ProductList[i].ProductCategory == this.ProdCat
                          && MainForm.ProductList[i].ProductID == this.ProdID)
                         {
+                            //checking the available stock quantity
                             if (CurrentValue <= MainForm.ProductList[i].ProductQuantity)
                             {
+                                //Rechecking the previous quantity
                                 QuantityTextBox.Undo();
                                 
                                 if(QuantityTextBox.Text != CurrentValue.ToString())
@@ -182,10 +197,11 @@ namespace EPOS_APPLICATION_20230733
                                     }
                                     catch
                                     {
-                                        //CurrentValue = CurrentValue - int.Parse(QuantityTextBox.Text);
                                         QuantityTextBox.Text = Value.ToString();
                                     }
                                 }
+
+                                //Calculating Items and Totals using provided quantity
                                 MainForm.TotalItems += CurrentValue;
                                 MainForm.GrandTotal += (CurrentValue * this._ProductPrice);
                                 MainForm frm = (MainForm)this.FindForm();
@@ -196,8 +212,10 @@ namespace EPOS_APPLICATION_20230733
                             }
                             else
                             {
-                                MessageBox.Show("Not enough items in inventory");
+                                MessageBox.Show("Requested Quantities of " + this.ProdName + " are not available in inventory",
+                               "Not Enough Items Available", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 QuantityTextBox.Undo();
+                                QuantityTextBox.Focus();
                             }
                         }
                     }
@@ -206,7 +224,8 @@ namespace EPOS_APPLICATION_20230733
             }
             catch
             {
-                MessageBox.Show("Only Numbers are allowed. Please enter valid quantity");
+                MessageBox.Show("Only Numbers are allowed in quantity. Please enter valid quantity",
+                                "Invalid Input",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 QuantityTextBox.Focus();
                 QuantityTextBox.SelectAll();
                 QuantityTextBox.Undo();

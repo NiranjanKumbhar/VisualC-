@@ -47,7 +47,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductNameLabel.Name = "ProductNameLabel";
             this.ProductNameLabel.Size = new System.Drawing.Size(179, 20);
             this.ProductNameLabel.TabIndex = 1;
-            this.ProductNameLabel.Text = "label1";
+            this.ProductNameLabel.Text = "label";
             // 
             // QuantityTextBox
             // 
@@ -78,7 +78,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductPriceLabel.Name = "ProductPriceLabel";
             this.ProductPriceLabel.Size = new System.Drawing.Size(80, 20);
             this.ProductPriceLabel.TabIndex = 5;
-            this.ProductPriceLabel.Text = "label2";
+            this.ProductPriceLabel.Text = "label";
             this.ProductPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProductTotalPriceLabel
@@ -88,7 +88,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductTotalPriceLabel.Name = "ProductTotalPriceLabel";
             this.ProductTotalPriceLabel.Size = new System.Drawing.Size(109, 20);
             this.ProductTotalPriceLabel.TabIndex = 6;
-            this.ProductTotalPriceLabel.Text = "label2";
+            this.ProductTotalPriceLabel.Text = "label";
             this.ProductTotalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -141,6 +141,7 @@ namespace EPOS_APPLICATION_20230733
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

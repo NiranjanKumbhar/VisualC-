@@ -66,6 +66,12 @@ namespace EPOS_APPLICATION_20230733
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.SaleButton = new System.Windows.Forms.Button();
+            this.ReportsButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.InventoryButton = new System.Windows.Forms.Button();
             this.SalesPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -88,19 +94,13 @@ namespace EPOS_APPLICATION_20230733
             this.TranIDSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.TransactionIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.FindButton = new System.Windows.Forms.Button();
             this.DateSearchGroupBox = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SearchDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TransIDSearchRadioButton = new System.Windows.Forms.RadioButton();
             this.DateSearchRadioButton = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.SaleButton = new System.Windows.Forms.Button();
-            this.ReportsButton = new System.Windows.Forms.Button();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.InventoryButton = new System.Windows.Forms.Button();
-            this.FindButton = new System.Windows.Forms.Button();
             this.ProductManagementPanel.SuspendLayout();
             this.ComboBoxPanel.SuspendLayout();
             this.ProductCategoryPanel.SuspendLayout();
@@ -109,6 +109,7 @@ namespace EPOS_APPLICATION_20230733
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SalesPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.InventoryGroupBox.SuspendLayout();
@@ -118,7 +119,6 @@ namespace EPOS_APPLICATION_20230733
             this.TranIDSearchGroupBox.SuspendLayout();
             this.DateSearchGroupBox.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AddProductButton
@@ -490,6 +490,97 @@ namespace EPOS_APPLICATION_20230733
             this.panel4.Size = new System.Drawing.Size(150, 747);
             this.panel4.TabIndex = 18;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.exit__1_;
+            this.ExitButton.Location = new System.Drawing.Point(4, 532);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(142, 80);
+            this.ExitButton.TabIndex = 21;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ExitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // SaleButton
+            // 
+            this.SaleButton.FlatAppearance.BorderSize = 0;
+            this.SaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaleButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaleButton.ForeColor = System.Drawing.Color.Black;
+            this.SaleButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Sales;
+            this.SaleButton.Location = new System.Drawing.Point(4, 116);
+            this.SaleButton.Name = "SaleButton";
+            this.SaleButton.Size = new System.Drawing.Size(142, 80);
+            this.SaleButton.TabIndex = 16;
+            this.SaleButton.Text = "&Sales";
+            this.SaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SaleButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SaleButton.UseVisualStyleBackColor = true;
+            this.SaleButton.Click += new System.EventHandler(this.BookButton_Click);
+            // 
+            // ReportsButton
+            // 
+            this.ReportsButton.FlatAppearance.BorderSize = 0;
+            this.ReportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReportsButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportsButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Report;
+            this.ReportsButton.Location = new System.Drawing.Point(3, 313);
+            this.ReportsButton.Name = "ReportsButton";
+            this.ReportsButton.Size = new System.Drawing.Size(143, 80);
+            this.ReportsButton.TabIndex = 14;
+            this.ReportsButton.Text = "Reports";
+            this.ReportsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ReportsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ReportsButton.UseVisualStyleBackColor = true;
+            this.ReportsButton.Click += new System.EventHandler(this.ReportsButton_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Search;
+            this.SearchButton.Location = new System.Drawing.Point(4, 213);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(143, 80);
+            this.SearchButton.TabIndex = 13;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // InventoryButton
+            // 
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventoryButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.inventory;
+            this.InventoryButton.Location = new System.Drawing.Point(4, 418);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(143, 80);
+            this.InventoryButton.TabIndex = 12;
+            this.InventoryButton.Text = "Manage Inventory";
+            this.InventoryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.InventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.InventoryButton.UseVisualStyleBackColor = true;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
+            // 
             // SalesPanel
             // 
             this.SalesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -738,6 +829,24 @@ namespace EPOS_APPLICATION_20230733
             this.label6.TabIndex = 2;
             this.label6.Text = "Transaction ID";
             // 
+            // FindButton
+            // 
+            this.FindButton.FlatAppearance.BorderSize = 0;
+            this.FindButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FindButton.ForeColor = System.Drawing.Color.Red;
+            this.FindButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.find_32;
+            this.FindButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FindButton.Location = new System.Drawing.Point(190, 211);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(98, 44);
+            this.FindButton.TabIndex = 5;
+            this.FindButton.Text = "Find";
+            this.FindButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Visible = false;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
             // DateSearchGroupBox
             // 
             this.DateSearchGroupBox.Controls.Add(this.label5);
@@ -801,124 +910,15 @@ namespace EPOS_APPLICATION_20230733
             this.DateSearchRadioButton.UseVisualStyleBackColor = true;
             this.DateSearchRadioButton.CheckedChanged += new System.EventHandler(this.DateSearchRadioButton_CheckedChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.FlatAppearance.BorderSize = 0;
-            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.exit__1_;
-            this.ExitButton.Location = new System.Drawing.Point(4, 532);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(142, 80);
-            this.ExitButton.TabIndex = 21;
-            this.ExitButton.Text = "Exit";
-            this.ExitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ExitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // SaleButton
-            // 
-            this.SaleButton.FlatAppearance.BorderSize = 0;
-            this.SaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaleButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaleButton.ForeColor = System.Drawing.Color.Black;
-            this.SaleButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Sales;
-            this.SaleButton.Location = new System.Drawing.Point(4, 116);
-            this.SaleButton.Name = "SaleButton";
-            this.SaleButton.Size = new System.Drawing.Size(142, 80);
-            this.SaleButton.TabIndex = 16;
-            this.SaleButton.Text = "&Sales";
-            this.SaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SaleButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.SaleButton.UseVisualStyleBackColor = true;
-            this.SaleButton.Click += new System.EventHandler(this.BookButton_Click);
-            // 
-            // ReportsButton
-            // 
-            this.ReportsButton.FlatAppearance.BorderSize = 0;
-            this.ReportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReportsButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportsButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Report;
-            this.ReportsButton.Location = new System.Drawing.Point(3, 313);
-            this.ReportsButton.Name = "ReportsButton";
-            this.ReportsButton.Size = new System.Drawing.Size(143, 80);
-            this.ReportsButton.TabIndex = 14;
-            this.ReportsButton.Text = "Reports";
-            this.ReportsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ReportsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ReportsButton.UseVisualStyleBackColor = true;
-            this.ReportsButton.Click += new System.EventHandler(this.ReportsButton_Click);
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.FlatAppearance.BorderSize = 0;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.Search;
-            this.SearchButton.Location = new System.Drawing.Point(4, 213);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(143, 80);
-            this.SearchButton.TabIndex = 13;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // InventoryButton
-            // 
-            this.InventoryButton.FlatAppearance.BorderSize = 0;
-            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InventoryButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InventoryButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.inventory;
-            this.InventoryButton.Location = new System.Drawing.Point(4, 418);
-            this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(143, 80);
-            this.InventoryButton.TabIndex = 12;
-            this.InventoryButton.Text = "Manage Inventory";
-            this.InventoryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.InventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.InventoryButton.UseVisualStyleBackColor = true;
-            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
-            // 
-            // FindButton
-            // 
-            this.FindButton.FlatAppearance.BorderSize = 0;
-            this.FindButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FindButton.ForeColor = System.Drawing.Color.Red;
-            this.FindButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.find_32;
-            this.FindButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FindButton.Location = new System.Drawing.Point(190, 211);
-            this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(98, 44);
-            this.FindButton.TabIndex = 5;
-            this.FindButton.Text = "Find";
-            this.FindButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.FindButton.UseVisualStyleBackColor = true;
-            this.FindButton.Visible = false;
-            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 747);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.InventoryGroupBox);
             this.Controls.Add(this.SalesPanel);
-            this.Controls.Add(this.SearchPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Vijay Sales POS";
@@ -937,6 +937,7 @@ namespace EPOS_APPLICATION_20230733
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SalesPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -952,7 +953,6 @@ namespace EPOS_APPLICATION_20230733
             this.DateSearchGroupBox.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -20,7 +20,7 @@ namespace EPOS_APPLICATION_20230733
 
 
         #region Properties
-
+        //Defining Properties of UserControl
         private string _ProductName;
         private string _ProductCat;
         private string _ProductID;
@@ -84,29 +84,35 @@ namespace EPOS_APPLICATION_20230733
 
         #endregion
 
+        //Event Handler for AddToCart button
+        //Product will be added to the cart
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
             MainForm frm = (MainForm)this.FindForm();
 
             CartList[] NewCartItem = new CartList[1];
 
+            //Finding Product from ProductList 
             for (var i = 0; i < MainForm.ProductList.Count; i++)
             {
+                //Adding the product to Cart
                 if (MainForm.ProductList[i].ProductCategory == this.ProdCat
-                    && MainForm.ProductList[i].ProductID == this.ProdID)
+                    && MainForm.ProductList[i].ProductID    == this.ProdID)
                 {
-                    NewCartItem[0] = new CartList();
-                    NewCartItem[0].ProdName = MainForm.ProductList[i].ProductName;
-                    NewCartItem[0].ProdCat = MainForm.ProductList[i].ProductCategory;
-                    NewCartItem[0].ProdID = MainForm.ProductList[i].ProductID;
-                    NewCartItem[0].ProdPrice = MainForm.ProductList[i].ProductPrice;
-                    NewCartItem[0].ProdTotal = MainForm.ProductList[i].ProductPrice;
+                    NewCartItem[0]              = new CartList();
+                    NewCartItem[0].ProdName     = MainForm.ProductList[i].ProductName;
+                    NewCartItem[0].ProdCat      = MainForm.ProductList[i].ProductCategory;
+                    NewCartItem[0].ProdID       = MainForm.ProductList[i].ProductID;
+                    NewCartItem[0].ProdPrice    = MainForm.ProductList[i].ProductPrice;
+                    NewCartItem[0].ProdTotal    = MainForm.ProductList[i].ProductPrice;
                     NewCartItem[0].ProdQuantity = 1;
-                    MainForm.GrandTotal += MainForm.ProductList[i].ProductPrice;
-                    MainForm.TotalItems += 1;
+
+                    MainForm.GrandTotal         += MainForm.ProductList[i].ProductPrice;
+                    MainForm.TotalItems         += 1;
                     frm.CartFlowLayoutPanel.Controls.Add(NewCartItem[0]);
-                    frm.TotalItemsLabel.Text = MainForm.TotalItems.ToString();
-                    frm.GrandTotalLabel.Text = MainForm.GrandTotal.ToString();
+
+                    frm.TotalItemsLabel.Text    = MainForm.TotalItems.ToString();
+                    frm.GrandTotalLabel.Text    = MainForm.GrandTotal.ToString();
                     MainForm.CurrentCartProducts.Add(ProdID);
                     break;
                 }
