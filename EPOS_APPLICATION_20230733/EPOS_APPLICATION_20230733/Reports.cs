@@ -40,6 +40,7 @@ namespace EPOS_APPLICATION_20230733
             LiveStockListView.Columns.Add("Product Quantity", 100, HorizontalAlignment.Center);
             LiveStockListView.Columns.Add("Product Price", 100, HorizontalAlignment.Center);
 
+            //Looping on ProductList and Adding products to the ListView
             for (var i = 0; i < MainForm.ProductList.Count; i++)
             {
                 Item[0] = MainForm.ProductList[i].ProductID;
@@ -47,22 +48,26 @@ namespace EPOS_APPLICATION_20230733
                 Item[2] = MainForm.ProductList[i].ProductName;
                 Item[3] = MainForm.ProductList[i].ProductQuantity.ToString();
                 Item[4] = MainForm.ProductList[i].ProductPrice.ToString();
+
+                //Checking if product has Zero Quantity
                 if (MainForm.ProductList[i].ProductQuantity == 0)
                 {
                     ZeroCount += 1;
                     LowQuantityLine += "!!!Alert!!!" + MainForm.ProductList[i].ProductName + " is OUT OF STOCK  ";
                 }
+                //If Product Quantity is less than 5 
                 else if (MainForm.ProductList[i].ProductQuantity < 5 )
                 { 
                     LowCount += 1;
                     LowQuantityLine += "!!!Caution!!! Product : " + MainForm.ProductList[i].ProductName + " has only "
                         + MainForm.ProductList[i].ProductQuantity.ToString() + " Quantity left.      ";
                 }
-
+                //Adding Item to ListViewItem
                 itm  = new ListViewItem(Item);
                 LiveStockListView.Items.Add(itm);
             }
 
+            //Detailed Information about Stock
             TotalCategoriesLabel.Text   = MainForm.CategoryList.Count.ToString();
             TotalProductsLabel.Text     = MainForm.ProductList.Count.ToString();
             LowOnStockLabel.Text        = LowCount.ToString();
@@ -73,6 +78,8 @@ namespace EPOS_APPLICATION_20230733
 
         }
 
+        //Event Handler for LiveStockButton
+        //Displaying Management Stock Report by default
         private void LiveStockButton_Click(object sender, EventArgs e)
         {
             LiveStockGroupBox.Visible   = true;
@@ -80,12 +87,13 @@ namespace EPOS_APPLICATION_20230733
             TodaysSaleGroupBox.Visible  = false;
         }
 
+        //Event Handler for SummaryButton Click
         private void SummaryButton_Click(object sender, EventArgs e)
         {
+            //Making UI changes
             SummaryGroupBox.Visible     = true;
             LiveStockGroupBox.Visible   = false;
             TodaysSaleGroupBox.Visible  = false;
-
 
             int TransactionNumber       =0,TotalItems=0;
             decimal TotalSale = 0m, LargestSale=0.0m, SmallestSale = 0.0m;
@@ -94,9 +102,11 @@ namespace EPOS_APPLICATION_20230733
             string FileLine;
             int i;
             
+            //Reading Transaction File to find sales summary
             InputFile = File.OpenText(MainForm.TRANSACTIONDATABASEFILENAME);
             while (!InputFile.EndOfStream)
             {
+                //Processing transactions having 5 lines each
                 for (i = 0; i < 5; i++)
                 {
                     FileLine = InputFile.ReadLine();
@@ -120,17 +130,20 @@ namespace EPOS_APPLICATION_20230733
                 }
             }
 
+            //Detailed Informtion about Sales Summary
             TotalTransactionsLabel.Text = TransactionNumber.ToString();
-            TotalSaleLabel.Text     = "€ " + TotalSale.ToString("n2");
-            TotalItemsLabel.Text    = TotalItems.ToString();
-            AverageSaleLabel.Text   = "€ "+(TotalSale / TransactionNumber).ToString("n2");
-            LargestSaleLabel.Text   = "€ " +LargestSale.ToString();
-            SmallestSaleLabel.Text  = "€ " +SmallestSale.ToString();
+            TotalItemsLabel.Text        = TotalItems.ToString();
+            TotalSaleLabel.Text         = "€ " + TotalSale.ToString("n2");
+            AverageSaleLabel.Text       = "€ "+(TotalSale / TransactionNumber).ToString("n2");
+            LargestSaleLabel.Text       = "€ " +LargestSale.ToString("n2");
+            SmallestSaleLabel.Text      = "€ " +SmallestSale.ToString("n2");
             
         }
 
+        //Event Handler for TodaysSaleButton click
         private void TodaySaleButton_Click(object sender, EventArgs e)
         {
+            //Reinitializing UI
             TodaySaleListView.Clear();
             SummaryGroupBox.Visible = false;
             LiveStockGroupBox.Visible = false;
@@ -139,6 +152,7 @@ namespace EPOS_APPLICATION_20230733
             string[] Item = new string[5];
             ListViewItem itm;
 
+            //Adding Columns to the ListViewItem
             TodaySaleListView.View = View.Details;
             TodaySaleListView.Columns.Add("Product ID", 100, HorizontalAlignment.Center);
             TodaySaleListView.Columns.Add("Product Category", 100, HorizontalAlignment.Center);
@@ -146,6 +160,7 @@ namespace EPOS_APPLICATION_20230733
             TodaySaleListView.Columns.Add("Product Quantity", 100, HorizontalAlignment.Center);
             TodaySaleListView.Columns.Add("Product Price", 100, HorizontalAlignment.Center);
 
+            //Products having quantities greater than 0 will be added to the list
             for (var i = 0; i < MainForm.SaleProductIDs.Count; i++)
             {
                 if(MainForm.SaleProductIDs[i].ProductQuantity > 0)
@@ -163,45 +178,56 @@ namespace EPOS_APPLICATION_20230733
             TodaySaleLabel.Text = MainForm.TodaysSaleTotal.ToString() ;
         }
 
+        //Event Handler for Exit Button
         private void Exitbutton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Event Handler for GenerateReportButton Click
         private void GenerateReportButton_Click(object sender, EventArgs e)
         {
+            //calling generic method for generating report
             GenerateReport(true,false);
         }
 
+        //Event Handler for DownloadLiveReportButton Click
         private void DownloadLiveReportButton_Click(object sender, EventArgs e)
         {
             GenerateReport(false,false);
         }
 
+        //Method to Generate Reports - Text file Generation
         public void GenerateReport(bool Sales,bool Exit)
         {
             StreamWriter FileWriter;
-            string FileName;
+            string FileName,FileContent;
 
+            //If its sales report
             if (Sales == true)
                 FileName = "Daily_Sales_Report_" + DateTime.Now.ToShortDateString() + ".txt";
+            //if its management report
             else
                 FileName = "Management_Stock_Report_" + DateTime.Now.ToShortDateString() + ".txt";
 
+            //If file already exist, delete the previous one and write new file
             if (File.Exists(FileName))
                 File.Delete(FileName);
             
+            //Creating file and Starting in append text mode
             FileWriter = File.AppendText(FileName);
-            string FileContent;
-
+            
+            //Writing HeaderLine
             if (Sales == true)
                 FileContent = "\t\t\t\tDaily Sales Report" + Environment.NewLine;
             else
                 FileContent = "\t\t\t\tManagement Stock Report" + Environment.NewLine;
 
+            //Writing Date and Time
             FileContent += "\t\t\t\t" + DateTime.Now.ToShortDateString() + Environment.NewLine;
             FileContent += "\t\t\t\t" + DateTime.Now.ToShortTimeString() + Environment.NewLine;
 
+            //Iterating on SoldItemProductList and writing it into file
             if (Sales==true)
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
@@ -218,6 +244,7 @@ namespace EPOS_APPLICATION_20230733
                 }
                 FileWriter.WriteLine(FileContent);
             }
+            //Iterating on ProductList and writing it into file
             else
             {
                 for (int i = 0; i < MainForm.CategoryList.Count; i++)
@@ -235,10 +262,12 @@ namespace EPOS_APPLICATION_20230733
             }
             FileWriter.Close();
             
+            //If its Exit method, popup will not be displayed
             if(!Exit)
                 MessageBox.Show("Report Generated and Saved to text file successfully.\nFile Name: "+ FileName,"Downloaded" );
         }
 
+        //For NewslineAnimation
         private void AnimateTextTimer_Tick(object sender, EventArgs e)
         {
             ReelLabel.Left -= 5;

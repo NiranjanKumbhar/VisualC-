@@ -57,9 +57,9 @@ namespace EPOS_APPLICATION_20230733
             this.AddToCartButton.ForeColor = System.Drawing.Color.Red;
             this.AddToCartButton.Image = global::EPOS_APPLICATION_20230733.Properties.Resources.cart;
             this.AddToCartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddToCartButton.Location = new System.Drawing.Point(19, 135);
+            this.AddToCartButton.Location = new System.Drawing.Point(26, 137);
             this.AddToCartButton.Name = "AddToCartButton";
-            this.AddToCartButton.Size = new System.Drawing.Size(96, 31);
+            this.AddToCartButton.Size = new System.Drawing.Size(83, 31);
             this.AddToCartButton.TabIndex = 3;
             this.AddToCartButton.Text = "Add";
             this.AddToCartButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -68,7 +68,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             // ProductPriceLabel
             // 
-            this.ProductPriceLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductPriceLabel.Location = new System.Drawing.Point(0, 108);
             this.ProductPriceLabel.Name = "ProductPriceLabel";
             this.ProductPriceLabel.Size = new System.Drawing.Size(131, 23);

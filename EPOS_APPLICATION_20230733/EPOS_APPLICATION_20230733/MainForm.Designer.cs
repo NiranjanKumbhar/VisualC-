@@ -916,9 +916,9 @@ namespace EPOS_APPLICATION_20230733
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 747);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.SalesPanel);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.InventoryGroupBox);
-            this.Controls.Add(this.SalesPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Vijay Sales POS";
