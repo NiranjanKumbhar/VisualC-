@@ -19,6 +19,7 @@ namespace EPOS_APPLICATION_20230733
         }
 
         string LowQuantityLine;
+        public Form RefToMainForm { get; set; }
 
         //Event Handler for Form Load Event
         private void Reports_Load(object sender, EventArgs e)
@@ -181,6 +182,7 @@ namespace EPOS_APPLICATION_20230733
         //Event Handler for Exit Button
         private void Exitbutton_Click(object sender, EventArgs e)
         {
+            RefToMainForm.Show();
             this.Close();
         }
 

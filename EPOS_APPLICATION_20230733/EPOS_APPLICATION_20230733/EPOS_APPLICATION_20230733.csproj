@@ -79,10 +79,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartList.cs">
+    <Compile Include="UserControls\CartList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CartList.Designer.cs">
+    <Compile Include="UserControls\CartList.Designer.cs">
       <DependentUpon>CartList.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs">
@@ -97,21 +97,21 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductCategoryList.cs">
+    <Compile Include="UserControls\ProductCategoryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProductCategoryList.Designer.cs">
+    <Compile Include="UserControls\ProductCategoryList.Designer.cs">
       <DependentUpon>ProductCategoryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductList.cs">
+    <Compile Include="UserControls\ProductList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProductList.Designer.cs">
+    <Compile Include="UserControls\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CartList.resx">
+    <EmbeddedResource Include="UserControls\CartList.resx">
       <DependentUpon>CartList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
@@ -120,10 +120,10 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductCategoryList.resx">
+    <EmbeddedResource Include="UserControls\ProductCategoryList.resx">
       <DependentUpon>ProductCategoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductList.resx">
+    <EmbeddedResource Include="UserControls\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

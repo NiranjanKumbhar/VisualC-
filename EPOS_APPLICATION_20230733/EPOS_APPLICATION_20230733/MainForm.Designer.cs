@@ -29,6 +29,7 @@ namespace EPOS_APPLICATION_20230733
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AddProductButton = new System.Windows.Forms.Button();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
@@ -101,6 +102,7 @@ namespace EPOS_APPLICATION_20230733
             this.panel3 = new System.Windows.Forms.Panel();
             this.TransIDSearchRadioButton = new System.Windows.Forms.RadioButton();
             this.DateSearchRadioButton = new System.Windows.Forms.RadioButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ProductManagementPanel.SuspendLayout();
             this.ComboBoxPanel.SuspendLayout();
             this.ProductCategoryPanel.SuspendLayout();
@@ -329,6 +331,7 @@ namespace EPOS_APPLICATION_20230733
             this.CategoryFlowLayoutPanel.Name = "CategoryFlowLayoutPanel";
             this.CategoryFlowLayoutPanel.Size = new System.Drawing.Size(599, 96);
             this.CategoryFlowLayoutPanel.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.CategoryFlowLayoutPanel, "Select Category to view products");
             // 
             // ProductsFlowLayoutPanel
             // 
@@ -910,6 +913,11 @@ namespace EPOS_APPLICATION_20230733
             this.DateSearchRadioButton.UseVisualStyleBackColor = true;
             this.DateSearchRadioButton.CheckedChanged += new System.EventHandler(this.DateSearchRadioButton_CheckedChanged);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -979,7 +987,6 @@ namespace EPOS_APPLICATION_20230733
         public System.Windows.Forms.FlowLayoutPanel ProductsFlowLayoutPanel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button OrderButton;
         public System.Windows.Forms.FlowLayoutPanel CartFlowLayoutPanel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -1030,6 +1037,8 @@ namespace EPOS_APPLICATION_20230733
         private System.Windows.Forms.ComboBox ProductComboBox;
         private System.Windows.Forms.RadioButton ModifyProductRadioButton;
         private System.Windows.Forms.Button ModifyButton;
+        public System.Windows.Forms.Button OrderButton;
+        public System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -26,6 +26,7 @@ namespace EPOS_APPLICATION_20230733
         public static Decimal GrandTotal { get; set; }
         public static Decimal TodaysSaleTotal { get; set; }
 
+
         //Files required during program execution
         public const string TRANSACTIONDATABASEFILENAME = "Transactions.txt";
         const string PRODUCTDATABASEFILENAME            = "Products.txt";
@@ -40,7 +41,7 @@ namespace EPOS_APPLICATION_20230733
         public string[,] Transactions;
 
         /*
-         Product Class for storing Product Details
+         * Product Class for storing Product Details
          */
         public class Product
         {
@@ -121,6 +122,7 @@ namespace EPOS_APPLICATION_20230733
             //if Categories found, fetching products according to categories
             if (CategoryList.Count > 0)
             {
+                
                 //Reading Product Stock file
                 InputFile = File.OpenText(PRODUCTDATABASEFILENAME);
                 while (!InputFile.EndOfStream)
@@ -167,6 +169,7 @@ namespace EPOS_APPLICATION_20230733
                     SaleProductIDs.Add(p2);
                 }
                 InputFile.Close();
+                toolTip1.Show("Select Desired Category to view Products",SaleButton);
             }
             else
                 MessageBox.Show("No Categories found in the Inventory. Try adding Categories first","No Categories to List",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -273,7 +276,9 @@ namespace EPOS_APPLICATION_20230733
         private void ReportsButton_Click(object sender, EventArgs e)
         {
             Reports Repo = new Reports();
-            Repo.ShowDialog();
+            Repo.RefToMainForm = this;
+            this.Hide();
+            Repo.Show();
         }
 
         /*
