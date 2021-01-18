@@ -128,7 +128,7 @@ namespace EPOS_APPLICATION_20230733
             this.AddProductButton.Location = new System.Drawing.Point(175, 373);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(113, 41);
-            this.AddProductButton.TabIndex = 0;
+            this.AddProductButton.TabIndex = 10;
             this.AddProductButton.Text = "Add Product";
             this.AddProductButton.UseVisualStyleBackColor = true;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
@@ -138,7 +138,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductNameTextBox.Location = new System.Drawing.Point(219, 95);
             this.ProductNameTextBox.Name = "ProductNameTextBox";
             this.ProductNameTextBox.Size = new System.Drawing.Size(201, 22);
-            this.ProductNameTextBox.TabIndex = 1;
+            this.ProductNameTextBox.TabIndex = 6;
             // 
             // label1
             // 
@@ -165,7 +165,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductCategoryListBox.Location = new System.Drawing.Point(140, 16);
             this.ProductCategoryListBox.Name = "ProductCategoryListBox";
             this.ProductCategoryListBox.Size = new System.Drawing.Size(201, 100);
-            this.ProductCategoryListBox.TabIndex = 4;
+            this.ProductCategoryListBox.TabIndex = 7;
             // 
             // label3
             // 
@@ -181,14 +181,14 @@ namespace EPOS_APPLICATION_20230733
             this.ProductPriceTextBox.Location = new System.Drawing.Point(219, 286);
             this.ProductPriceTextBox.Name = "ProductPriceTextBox";
             this.ProductPriceTextBox.Size = new System.Drawing.Size(201, 22);
-            this.ProductPriceTextBox.TabIndex = 6;
+            this.ProductPriceTextBox.TabIndex = 8;
             // 
             // ProductQuantityTextBox
             // 
             this.ProductQuantityTextBox.Location = new System.Drawing.Point(219, 324);
             this.ProductQuantityTextBox.Name = "ProductQuantityTextBox";
             this.ProductQuantityTextBox.Size = new System.Drawing.Size(201, 22);
-            this.ProductQuantityTextBox.TabIndex = 8;
+            this.ProductQuantityTextBox.TabIndex = 9;
             // 
             // label4
             // 
@@ -222,7 +222,7 @@ namespace EPOS_APPLICATION_20230733
             this.ModifyButton.Location = new System.Drawing.Point(294, 372);
             this.ModifyButton.Name = "ModifyButton";
             this.ModifyButton.Size = new System.Drawing.Size(126, 41);
-            this.ModifyButton.TabIndex = 12;
+            this.ModifyButton.TabIndex = 11;
             this.ModifyButton.Text = "Modify Product";
             this.ModifyButton.UseVisualStyleBackColor = true;
             this.ModifyButton.Click += new System.EventHandler(this.ModifyButton_Click);
@@ -251,7 +251,8 @@ namespace EPOS_APPLICATION_20230733
             this.ProductComboBox.Location = new System.Drawing.Point(141, 18);
             this.ProductComboBox.Name = "ProductComboBox";
             this.ProductComboBox.Size = new System.Drawing.Size(201, 24);
-            this.ProductComboBox.TabIndex = 0;
+            this.ProductComboBox.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.ProductComboBox, "Please select Product from the list");
             this.ProductComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductComboBox_SelectedIndexChanged);
             // 
             // ProductCategoryPanel
@@ -299,14 +300,14 @@ namespace EPOS_APPLICATION_20230733
             this.CategoryNameTextBox.Location = new System.Drawing.Point(142, 23);
             this.CategoryNameTextBox.Name = "CategoryNameTextBox";
             this.CategoryNameTextBox.Size = new System.Drawing.Size(201, 22);
-            this.CategoryNameTextBox.TabIndex = 1;
+            this.CategoryNameTextBox.TabIndex = 3;
             // 
             // CategoryButton
             // 
             this.CategoryButton.Location = new System.Drawing.Point(169, 137);
             this.CategoryButton.Name = "CategoryButton";
             this.CategoryButton.Size = new System.Drawing.Size(136, 41);
-            this.CategoryButton.TabIndex = 0;
+            this.CategoryButton.TabIndex = 4;
             this.CategoryButton.Text = "Add Category";
             this.CategoryButton.UseVisualStyleBackColor = true;
             this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
@@ -364,7 +365,7 @@ namespace EPOS_APPLICATION_20230733
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(128, 41);
             this.ClearButton.TabIndex = 9;
-            this.ClearButton.Text = "Clear";
+            this.ClearButton.Text = "C&lear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Visible = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -414,7 +415,7 @@ namespace EPOS_APPLICATION_20230733
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(157, 41);
             this.OrderButton.TabIndex = 0;
-            this.OrderButton.Text = "Complete Order";
+            this.OrderButton.Text = "&Complete Order";
             this.OrderButton.UseVisualStyleBackColor = true;
             this.OrderButton.Visible = false;
             this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
@@ -513,7 +514,7 @@ namespace EPOS_APPLICATION_20230733
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(142, 80);
             this.ExitButton.TabIndex = 21;
-            this.ExitButton.Text = "Exit";
+            this.ExitButton.Text = "E&xit";
             this.ExitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ExitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -546,7 +547,7 @@ namespace EPOS_APPLICATION_20230733
             this.ReportsButton.Name = "ReportsButton";
             this.ReportsButton.Size = new System.Drawing.Size(143, 80);
             this.ReportsButton.TabIndex = 14;
-            this.ReportsButton.Text = "Reports";
+            this.ReportsButton.Text = "&Reports";
             this.ReportsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ReportsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ReportsButton.UseVisualStyleBackColor = true;
@@ -562,7 +563,7 @@ namespace EPOS_APPLICATION_20230733
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(143, 80);
             this.SearchButton.TabIndex = 13;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "S&earch";
             this.SearchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -578,7 +579,7 @@ namespace EPOS_APPLICATION_20230733
             this.InventoryButton.Name = "InventoryButton";
             this.InventoryButton.Size = new System.Drawing.Size(143, 80);
             this.InventoryButton.TabIndex = 12;
-            this.InventoryButton.Text = "Manage Inventory";
+            this.InventoryButton.Text = "&Manage Inventory";
             this.InventoryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.InventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.InventoryButton.UseVisualStyleBackColor = true;
@@ -620,7 +621,8 @@ namespace EPOS_APPLICATION_20230733
             // 
             // TransactionIDLabel
             // 
-            this.TransactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransactionIDLabel.ForeColor = System.Drawing.Color.Red;
             this.TransactionIDLabel.Location = new System.Drawing.Point(143, 8);
             this.TransactionIDLabel.Name = "TransactionIDLabel";
             this.TransactionIDLabel.Size = new System.Drawing.Size(150, 33);
@@ -647,7 +649,7 @@ namespace EPOS_APPLICATION_20230733
             this.ModifyProductRadioButton.Location = new System.Drawing.Point(615, 35);
             this.ModifyProductRadioButton.Name = "ModifyProductRadioButton";
             this.ModifyProductRadioButton.Size = new System.Drawing.Size(123, 21);
-            this.ModifyProductRadioButton.TabIndex = 13;
+            this.ModifyProductRadioButton.TabIndex = 2;
             this.ModifyProductRadioButton.TabStop = true;
             this.ModifyProductRadioButton.Text = "Modify Product";
             this.ModifyProductRadioButton.UseVisualStyleBackColor = true;
@@ -659,7 +661,7 @@ namespace EPOS_APPLICATION_20230733
             this.AddProductRadioButton.Location = new System.Drawing.Point(474, 35);
             this.AddProductRadioButton.Name = "AddProductRadioButton";
             this.AddProductRadioButton.Size = new System.Drawing.Size(107, 21);
-            this.AddProductRadioButton.TabIndex = 12;
+            this.AddProductRadioButton.TabIndex = 1;
             this.AddProductRadioButton.TabStop = true;
             this.AddProductRadioButton.Text = "Add Product";
             this.AddProductRadioButton.UseVisualStyleBackColor = true;
@@ -671,7 +673,7 @@ namespace EPOS_APPLICATION_20230733
             this.AddCategoryRadioButton.Location = new System.Drawing.Point(319, 35);
             this.AddCategoryRadioButton.Name = "AddCategoryRadioButton";
             this.AddCategoryRadioButton.Size = new System.Drawing.Size(115, 21);
-            this.AddCategoryRadioButton.TabIndex = 11;
+            this.AddCategoryRadioButton.TabIndex = 0;
             this.AddCategoryRadioButton.TabStop = true;
             this.AddCategoryRadioButton.Text = "Add Category";
             this.AddCategoryRadioButton.UseVisualStyleBackColor = true;
@@ -929,6 +931,7 @@ namespace EPOS_APPLICATION_20230733
             this.Controls.Add(this.InventoryGroupBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vijay Sales POS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);

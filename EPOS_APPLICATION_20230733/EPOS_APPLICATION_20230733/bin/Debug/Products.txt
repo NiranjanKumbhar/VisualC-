@@ -42,7 +42,7 @@ Elec932144
 Electronics & Acces
 Bose Smart Soundbar 300
 450.67
-6
+0
 Elec676280
 Electronics & Acces
 Fitbit Versa 3 Smartwatch
@@ -217,7 +217,7 @@ Tele149294
 Televisions & Accessories
 Sharp 1T32 Inch HD Ready LED TV
 167.88
-3
+0
 Tele660905
 Televisions & Accessories
 Sony 32-Inch HD Smart TV

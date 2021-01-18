@@ -360,7 +360,8 @@ namespace EPOS_APPLICATION_20230733
             Message = "Please Confirm the below order:\n\n";
             foreach (CartList CartItems in CartFlowLayoutPanel.Controls)
             {
-                Message = Message + "\n" + CartItems.ProdName + "          \t" + CartItems.ProdQuantity + " item";
+                Message = Message + "\nProduct Name: " + CartItems.ProdName +
+                                    "\nQuantity(s)      : " + CartItems.ProdQuantity  +Environment.NewLine;
             }
             Message = Message + "\n\nYou will have to pay €" + GrandTotal.ToString() +" for "+TotalItems.ToString()+" items.";
             Message = Message + "\n\nDo you want to confirm the order?";
@@ -913,6 +914,8 @@ namespace EPOS_APPLICATION_20230733
             {
                 ProductComboBox.Items.Add(Prod.ProductName);
             }
+
+            toolTip1.Show(toolTip1.GetToolTip(ProductComboBox),ProductComboBox,25000);
         }
 
         //Event Handler for ProductComboBox, If Item is selected, quantity and price is displayed in Textboxes

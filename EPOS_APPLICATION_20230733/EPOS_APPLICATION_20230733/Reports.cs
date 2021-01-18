@@ -24,15 +24,35 @@ namespace EPOS_APPLICATION_20230733
         //Event Handler for Form Load Event
         private void Reports_Load(object sender, EventArgs e)
         {
-            string[] Item = new string[5];
-            ListViewItem itm;
-            int LowCount =0, ZeroCount=0;
+            
 
             //Initializing UI controls
             SummaryGroupBox.Visible     = false;
             LiveStockGroupBox.Visible   = true;
             TodaysSaleGroupBox.Visible  = false;
             LiveStockListView.View      = View.Details;
+
+            CategoryComboBox.Items.Clear();
+            //Adding Filters to the Stock Report
+            foreach (string Cat in MainForm.CategoryList)
+            {
+                CategoryComboBox.Items.Add(Cat);
+            }
+            CategoryComboBox.Items.Add("ALL");
+
+            //Calling Live Stock Method to display report
+            LiveStockDisplay("");
+
+
+
+        }
+
+        private void LiveStockDisplay(string Category)
+        {
+            string[] Item = new string[5];
+            ListViewItem itm;
+            int LowCount = 0, ZeroCount = 0;
+
 
             //Adding Columns to the ListView
             LiveStockListView.Columns.Add("Product ID", 100, HorizontalAlignment.Center);
@@ -44,6 +64,12 @@ namespace EPOS_APPLICATION_20230733
             //Looping on ProductList and Adding products to the ListView
             for (var i = 0; i < MainForm.ProductList.Count; i++)
             {
+                if(Category!= "")
+                {
+                    if (Category != MainForm.ProductList[i].ProductCategory)
+                        continue;
+                }
+                
                 Item[0] = MainForm.ProductList[i].ProductID;
                 Item[1] = MainForm.ProductList[i].ProductCategory;
                 Item[2] = MainForm.ProductList[i].ProductName;
@@ -57,26 +83,24 @@ namespace EPOS_APPLICATION_20230733
                     LowQuantityLine += "!!!Alert!!!" + MainForm.ProductList[i].ProductName + " is OUT OF STOCK  ";
                 }
                 //If Product Quantity is less than 5 
-                else if (MainForm.ProductList[i].ProductQuantity < 5 )
-                { 
+                else if (MainForm.ProductList[i].ProductQuantity < 5)
+                {
                     LowCount += 1;
                     LowQuantityLine += "!!!Caution!!! Product : " + MainForm.ProductList[i].ProductName + " has only "
                         + MainForm.ProductList[i].ProductQuantity.ToString() + " Quantity left.      ";
                 }
                 //Adding Item to ListViewItem
-                itm  = new ListViewItem(Item);
+                itm = new ListViewItem(Item);
                 LiveStockListView.Items.Add(itm);
             }
 
             //Detailed Information about Stock
-            TotalCategoriesLabel.Text   = MainForm.CategoryList.Count.ToString();
-            TotalProductsLabel.Text     = MainForm.ProductList.Count.ToString();
-            LowOnStockLabel.Text        = LowCount.ToString();
-            OutOfStockLabel.Text        = ZeroCount.ToString();
-            ReelLabel.Text              = LowQuantityLine;
+            TotalCategoriesLabel.Text = MainForm.CategoryList.Count.ToString();
+            TotalProductsLabel.Text = MainForm.ProductList.Count.ToString();
+            LowOnStockLabel.Text = LowCount.ToString();
+            OutOfStockLabel.Text = ZeroCount.ToString();
+            ReelLabel.Text = LowQuantityLine;
             AnimateTextTimer.Start();
-            
-
         }
 
         //Event Handler for LiveStockButton
@@ -171,7 +195,7 @@ namespace EPOS_APPLICATION_20230733
                     Item[2] = MainForm.SaleProductIDs[i].ProductName;
                     Item[3] = MainForm.SaleProductIDs[i].ProductQuantity.ToString();
                     Item[4] = MainForm.SaleProductIDs[i].ProductPrice.ToString();
-
+                    //Adding Item into List
                     itm = new ListViewItem(Item);
                     TodaySaleListView.Items.Add(itm);
                 }
@@ -275,5 +299,23 @@ namespace EPOS_APPLICATION_20230733
             ReelLabel.Left -= 5;
         }
 
+        //if form is closed
+        private void Reports_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RefToMainForm.Show();
+        }
+
+        //If category filter applied
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(CategoryComboBox.SelectedIndex != -1)
+            {
+                LiveStockListView.Items.Clear();
+                if (CategoryComboBox.SelectedItem.ToString()=="ALL")
+                    LiveStockDisplay("");
+                else
+                    LiveStockDisplay(CategoryComboBox.SelectedItem.ToString());
+            }
+        }
     }
 }

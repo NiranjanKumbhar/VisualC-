@@ -1,6 +1,6 @@
 				Management Stock Report
-				17-01-2021
-				09:09 PM
+				18-01-2021
+				12:41 AM
 
 				Category: Electronics & Acces
 	Product Name                                      Quantity Available
@@ -12,7 +12,7 @@
 	Bose QuietComfort 35                              19        
 	Canon EOS 2000D                                   10        
 	JBL Go2 Portable Speaker                          32        
-	Bose Smart Soundbar 300                           6         
+	Bose Smart Soundbar 300                           0         
 	Fitbit Versa 3 Smartwatch                         25        
 	Apple Watch SE GPS                                6         
 	ORSKEY Dash Cam Front                             9         
@@ -56,7 +56,7 @@
 	LG 43 Inch UHD 4K HDR LED TV                      15        
 	TCL 32-Inch LED Smart Android TV                  20        
 	Samsung QLED 4K 50-inch Smart TV                  3         
-	Sharp 1T32 Inch HD Ready LED TV                   3         
+	Sharp 1T32 Inch HD Ready LED TV                   0         
 	Sony 32-Inch HD Smart TV                          4         
 	Philips 75-inch 4K Ultra HD Smart TV              2         
 	Panasonic 55 Inch 4K Ultra HDR LED                4         
