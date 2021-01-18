@@ -84,6 +84,7 @@ namespace EPOS_APPLICATION_20230733
          */
         private void MainForm_Load(object sender, EventArgs e)
         {
+            RealTimer.Start();
             //Making UI changes
             SearchPanel.Visible = false;
             InventoryGroupBox.Visible = false;
@@ -995,5 +996,9 @@ namespace EPOS_APPLICATION_20230733
             }
         }
 
+        private void RealTimer_Tick(object sender, EventArgs e)
+        {
+            TimeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

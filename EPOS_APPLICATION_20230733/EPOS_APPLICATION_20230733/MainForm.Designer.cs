@@ -103,6 +103,8 @@ namespace EPOS_APPLICATION_20230733
             this.TransIDSearchRadioButton = new System.Windows.Forms.RadioButton();
             this.DateSearchRadioButton = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.RealTimer = new System.Windows.Forms.Timer(this.components);
+            this.TimeLabel = new System.Windows.Forms.Label();
             this.ProductManagementPanel.SuspendLayout();
             this.ComboBoxPanel.SuspendLayout();
             this.ProductCategoryPanel.SuspendLayout();
@@ -602,6 +604,7 @@ namespace EPOS_APPLICATION_20230733
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TimeLabel);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.TransactionIDLabel);
             this.panel1.Location = new System.Drawing.Point(608, 9);
@@ -623,7 +626,7 @@ namespace EPOS_APPLICATION_20230733
             // 
             this.TransactionIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransactionIDLabel.ForeColor = System.Drawing.Color.Red;
-            this.TransactionIDLabel.Location = new System.Drawing.Point(143, 8);
+            this.TransactionIDLabel.Location = new System.Drawing.Point(143, 9);
             this.TransactionIDLabel.Name = "TransactionIDLabel";
             this.TransactionIDLabel.Size = new System.Drawing.Size(150, 33);
             this.TransactionIDLabel.TabIndex = 9;
@@ -920,6 +923,21 @@ namespace EPOS_APPLICATION_20230733
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // RealTimer
+            // 
+            this.RealTimer.Tick += new System.EventHandler(this.RealTimer_Tick);
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.ForeColor = System.Drawing.Color.Red;
+            this.TimeLabel.Location = new System.Drawing.Point(461, 15);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(42, 18);
+            this.TimeLabel.TabIndex = 11;
+            this.TimeLabel.Text = "Time";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1042,6 +1060,8 @@ namespace EPOS_APPLICATION_20230733
         private System.Windows.Forms.Button ModifyButton;
         public System.Windows.Forms.Button OrderButton;
         public System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Timer RealTimer;
+        private System.Windows.Forms.Label TimeLabel;
     }
 }
 

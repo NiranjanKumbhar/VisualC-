@@ -34,6 +34,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductPriceLabel = new System.Windows.Forms.Label();
             this.ProductNameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.ProductListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@ namespace EPOS_APPLICATION_20230733
             this.ProductListPanel.Controls.Add(this.pictureBox1);
             this.ProductListPanel.Location = new System.Drawing.Point(3, 3);
             this.ProductListPanel.Name = "ProductListPanel";
-            this.ProductListPanel.Size = new System.Drawing.Size(138, 168);
+            this.ProductListPanel.Size = new System.Drawing.Size(138, 182);
             this.ProductListPanel.TabIndex = 0;
             // 
             // AddToCartButton
@@ -96,13 +97,22 @@ namespace EPOS_APPLICATION_20230733
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(4, 177);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(136, 10);
+            this.panel1.TabIndex = 1;
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ProductListPanel);
             this.Name = "ProductList";
-            this.Size = new System.Drawing.Size(144, 171);
+            this.Size = new System.Drawing.Size(144, 189);
             this.ProductListPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -116,5 +126,6 @@ namespace EPOS_APPLICATION_20230733
         private System.Windows.Forms.Label ProductPriceLabel;
         private System.Windows.Forms.Label ProductNameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPOS_APPLICATION_20230733.exe" size="329656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPOS_APPLICATION_20230733.exe" size="330168">
       <assemblyIdentity name="EPOS_APPLICATION_20230733" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4qcoXnqYlQCu48KObiAinfdzFbiHeSQCg+kgNoi54Zw=</dsig:DigestValue>
+        <dsig:DigestValue>LvFLyVNp5YFDrlpWPnI2qjlMmjeJb8m8m6Wv/pz61A4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
