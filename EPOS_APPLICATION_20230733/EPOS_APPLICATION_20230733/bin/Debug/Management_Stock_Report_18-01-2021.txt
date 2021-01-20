@@ -1,11 +1,11 @@
 				Management Stock Report
 				18-01-2021
-				12:56 AM
+				11:55 PM
 
 				Category: Electronics & Acces
 	Product Name                                      Quantity Available
-	SanDisk Ultra 64 GB                               0         
-	HDMI 2.0 Cable                                    3         
+	SanDisk Ultra 64 GB                               5         
+	HDMI 2.0 Cable                                    0         
 	LED Ring Light with Tripod Stand                  12        
 	Apple AirPods Pro                                 18        
 	Sony WH-1000XM3 Headphones                        7         

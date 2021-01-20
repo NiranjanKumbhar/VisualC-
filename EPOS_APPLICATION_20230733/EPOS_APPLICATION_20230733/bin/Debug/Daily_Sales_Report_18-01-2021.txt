@@ -1,9 +1,10 @@
 				Daily Sales Report
 				18-01-2021
-				12:56 AM
+				11:55 PM
 
 				Category: Electronics & Acces
 	Product Name                                      Quantity Sold
+	HDMI 2.0 Cable                                    3         
 
 				Category: Mobiles
 	Product Name                                      Quantity Sold
